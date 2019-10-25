@@ -1,0 +1,117 @@
+//  BLOCK LEVEL
+//  STYLE @spotlight
+//
+//  
+//  - Small block to highlight one topic with some links in a separate box
+//  - Responsive image above contentblock
+//  - Extend with vibrant color pick from image
+
+
+.spotlight
+{
+	margin: 2.222em 0;
+	clear: both;
+	
+	> .layout-body
+	{
+		background-color: $lichtgrijs; // Basiskleur is lichtgrijs.
+		
+		hr
+		{
+			background-color: $wit; // Switch de HR kleur naar wit.
+			margin: 1em 0;
+		}
+	}
+
+	&.lichtgrijs
+	{
+		> .layout-body
+		{
+			background-color: $lichtgrijs; // Lichtgrijs voor basismeldingen.
+		}
+	}
+	&.ijsblauw
+	{
+		> .layout-body
+		{
+			background-color: $ijsblauw; // IJsblauw als tussenvorm.
+		}
+	}
+	&.vanille
+	{
+		> .layout-body
+		{
+			background-color: $vanillegeel; // Lichtgeel voor attentie.
+		}
+	}
+	
+	
+	
+	.image-beside
+	{
+		margin-top: 0;
+		
+		.image-wrap,
+		.text
+		{
+			width: 100%;
+			float: none;
+			
+		}
+		.image-wrap
+		{			
+			figure,
+			img
+			{
+				display: block;			
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+
+	.text.layout-body
+	{
+		padding: 1.2em 1.2em 0.6em;
+
+		:first-child
+		{
+			margin-top: 0;
+		}
+	}
+	
+	.arrow
+	{
+		background-image: url($pijltjezwart);
+		color: $zwart;
+	}
+
+
+	&.spotlight-intext-left
+	{
+		@include tweakpoint('min-width',35em)
+		{
+			width: 50%;
+			float: left;
+			clear: left;
+			margin-top: 1.2em;
+			margin-bottom: 1.8em;
+			margin-right: 1.2em;
+			padding-right: 1.2em;
+		}
+	}
+
+	&.spotlight-intext-right
+	{
+		@include tweakpoint('min-width',35em)
+		{
+			width: 50%;
+			float: right;
+			clear: right;
+			margin-top: 1.2em;
+			margin-bottom: 1.8em;
+			margin-left: 1.2em;
+			padding-left: 1.2em;
+		}
+	}
+}

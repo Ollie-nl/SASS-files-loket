@@ -1,0 +1,240 @@
+.confirmation
+{
+	padding: 1em 0 0;
+	position: relative;
+	overflow: hidden;
+	
+	.confirmation-base
+	{
+		position: relative;
+	}
+	
+	fieldset
+	{
+		margin: 2em 0 0;
+		border-top: 0;
+		position: relative;
+
+		// Stack confirmation and send buttons vertical on mobile.
+		@include tweakpoint('max-width',29.95em)
+		{
+			padding-bottom: 12em;
+		}
+		@include tweakpoint('min-width',30em)
+		{
+			padding-bottom: 8em;		
+		}
+				
+		div
+		{
+			position: absolute;
+			left: 0;
+			z-index: 50;
+			background-color: $wit;
+			padding-right: 0.4em;
+
+			@include tweakpoint('max-width',29.95em)
+			{
+				width: 100%;
+				height: 6em;
+				bottom: 6em;
+			}
+			@include tweakpoint('min-width',30em)
+			{
+				width: 50%;
+				height: 8em;
+				bottom: 0;
+			}
+			
+			&:after
+			{
+				content: " ";
+				display: block;
+				border: 4em solid transparent;
+				border-bottom: 0.7em solid transparent;
+				position: absolute;
+
+				@include tweakpoint('max-width', 29.95em)
+				{
+					border-top: 1.5em solid $wit;
+					left: 50%;
+					top: 100%;
+					margin-left: -4em;
+				}
+				@include tweakpoint('min-width',30em)
+				{
+					border-left: 1.5em solid $wit;
+					left: 100%;
+					top: 0;					
+				}
+			}
+			
+			
+			> div
+			{
+				background-color: $ijsblauw;
+				padding: 1em 0 1em 1.2em;
+
+				@include tweakpoint('max-width',29.95em)
+				{
+					bottom: 0.25em;
+					height: 5.75em;
+				}
+				@include tweakpoint('min-width',30em)
+				{
+					width: 99%;
+				}
+
+				
+				&:after
+				{
+					@include tweakpoint('max-width',29.95em)
+					{
+						border-top-color: $ijsblauw;
+					}
+					@include tweakpoint('min-width',30em)
+					{
+						border-left-color: $ijsblauw;
+					}
+				}
+			}
+		}
+	}
+
+	legend
+	{
+		display: block;
+		width: 100%;
+		border-top: 8px solid $midgrijs;
+		margin: 0;
+		padding: 1em 0;
+		background: $wit;		
+		font-size: 1.25em;
+		font-weight: bold;
+		text-transform: none;
+		letter-spacing: normal;
+	}
+
+	input
+	{
+		position: absolute;
+
+		@include tweakpoint('max-width',29.95em)
+		{
+			left: 50%;
+			top: 1.9em;
+			margin-left: -7.2em;
+		}
+		@include tweakpoint('min-width',30em)
+		{
+			left: 1.8em;
+			top: 2.3em;
+		}
+	}
+	
+	label,
+	input[type=checkbox] + label
+	{
+		font-weight: normal;
+
+		@include tweakpoint('max-width',29.95em)
+		{
+			position: absolute;
+			left: 50%;
+			top: 1.5em;
+			margin-left: -5.5em;
+			width: 12em;
+		}
+		@include tweakpoint('min-width',30em)
+		{
+			max-width: 15em;
+			padding: 1em 1.2em 1em 2.4em;
+		}
+
+	}
+
+	.underlayment,
+	.overlay
+	{
+		width: 100%;
+		height: 8em;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: 10;
+		background-color: $ijsblauw;
+	}
+	.overlay
+	{
+		background-color: rgba(255,255,255,0.66);
+		z-index: 30;
+		transition: left 0.4s ease-in;
+	}
+	&.submitok
+	{
+		.overlay
+		{
+			left: 100%;
+		}
+
+		fieldset div div
+		{
+			background-color: $zachtgroen;
+			
+			&:after
+			{
+				@include tweakpoint('max-width',29.95em)
+				{
+					border-top-color: $zachtgroen;
+				}
+				@include tweakpoint('min-width',30em)
+				{
+					border-left-color: $zachtgroen;
+				}
+			} 
+		}
+	}
+	
+	+ .navigation_buttons
+	{
+		div.navigation_button:first-child
+		{
+			width: 15em;
+			float: left;
+			margin-right: -15em;
+			
+			a 
+			{
+				display: inline-block;
+			}
+		}
+		
+	}
+}
+
+
+
+#submitButton_button
+{
+	position: relative;
+	z-index: 20;
+	float: left;
+
+	@include tweakpoint('max-width',29.95em)
+	{
+		left: 50%;
+		margin-left: -5em;
+		bottom: 6em;
+	}
+	@include tweakpoint('min-width',30em)
+	{
+		bottom: 7.5em;
+		left: 75%;
+		margin-left: -5em;
+	}
+	
+	#submitButton {
+		width: 11.11em; // 10 em width / 0.9em font-size for the button
+		margin: 0;
+	}
+}

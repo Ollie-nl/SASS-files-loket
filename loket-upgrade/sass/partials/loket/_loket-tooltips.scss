@@ -1,0 +1,94 @@
+// Tooltips nieuwe stijl
+// op basis van button vlak na label in eigen divje .label
+.label
+{
+	position: relative;
+	
+	label
+	{
+		display: inline-block;	
+	}
+}
+button.ExxTooltip
+{
+	display: inline-block;
+	background: transparent;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	text-transform: none;
+	letter-spacing: normal;
+	color: $zwart;
+	text-align: left;
+	font-weight: normal;
+	
+	span
+	{
+		display: none;
+	}
+	
+	//&:hover,
+	&:focus
+	{
+		span
+		{
+			@include tweakpoint('min-width',60em)
+			{
+				display: block;
+				position: absolute;
+				left: 0;
+				top: auto !important;
+				bottom: 100% !important;
+				z-index: 100;
+				margin-bottom: -.5em;
+				border: 0;
+				padding: 0.6em 0.8em;
+				background: $lichtgeel;
+				color: $zwart;
+				font-size: 0.9em;
+				text-transform: none;
+				text-align: left;
+				font-weight: normal;
+				letter-spacing: normal;
+			}
+
+			&:after
+			{
+				@include tweakpoint('min-width',60em)
+				{
+					content: '';
+					width: 0;
+					height: 0;
+					position: absolute;
+					border-left: 12px solid transparent;
+					border-right: 12px solid transparent;
+					border-top: 16px solid $lichtgeel;
+					bottom: -1em;
+					left: 1.2em;
+				}
+			}		
+			
+		}
+	}
+	
+	&:before
+	{
+		@include tweakpoint('min-width',60em)
+		{
+			content: "i";
+			display: inline-block;
+			width: 1.4em;
+			height: 1.4em;
+			position: relative;
+			top: -0.1em;
+			left: 0.2em;
+			border-radius: 50%;
+			color: $wit;
+			background-color: $donkerblauw;
+			font-size: 0.8em;
+			text-align: center;
+		}
+	}
+}
+
+
