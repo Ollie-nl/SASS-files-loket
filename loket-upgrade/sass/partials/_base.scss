@@ -877,7 +877,8 @@ article p::selection, article h1::selection, article h2::selection, article h3::
 
 	& > .container
 	{
-		background: $wit url($huisstijlbalk) 0 0 no-repeat;		
+		//background: $wit url($huisstijlbalk) 0 0 no-repeat;		
+		background: $wit;	
 	}
 }
 
