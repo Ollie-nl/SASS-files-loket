@@ -835,7 +835,7 @@ article p::selection, article h1::selection, article h2::selection, article h3::
 	{
 		width: 50%;
 		min-width: 8em;
-		max-width: 10em;
+		max-width: 12em;
 	}
 
 	&:focus,
@@ -877,7 +877,8 @@ article p::selection, article h1::selection, article h2::selection, article h3::
 
 	& > .container
 	{
-		background: $wit url($huisstijlbalk) 0 0 no-repeat;		
+		// new style, remove yellow bar
+		//background: $wit url($huisstijlbalk) 0 0 no-repeat;		
 	}
 }
 
