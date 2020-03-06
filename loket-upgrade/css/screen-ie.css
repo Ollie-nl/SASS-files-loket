@@ -863,7 +863,9 @@ article p::selection, article h1::selection, article h2::selection, article h3::
 #main {
   position: relative; }
   #main .container {
-    padding: 0 0.8em; }
+    padding: 0 1.2em 2em 0.8em; }
+  #main > .container {
+    background: #FFFFFF; }
 
 .grid-wrap, .twocolumngroup-col1 > div,
 .twocolumngroup-col2 > div {
@@ -1085,7 +1087,7 @@ ul.linklijst, ul.rightLinksList,
   clear: left; }
 
 .breakout .grid-wrap-breakout {
-  margin: 0 -1.2em; }
+  margin: 0 -2em 0 0.8em; }
 
 .breakout .article-width-breakout {
   width: 100%; }
@@ -1294,10 +1296,16 @@ footer {
         border: 0; }
     footer .social .twitter {
       background: #CC0000 url(../Images/png/icoon-footer-twitter.png) no-repeat center center;
-      background-size: 1.8em; }
+      background-size: 1.9em; }
     footer .social .facebook {
       background: #CC0000 url(../Images/png/icoon-footer-facebook.png) no-repeat center center;
-      background-size: 1.5em; }
+      background-size: 1.9em; }
+    footer .social .linkedin {
+      background: #CC0000 url(../Images/png/icoon-footer-linkedin.png) no-repeat center center;
+      background-size: 2em; }
+    footer .social .instagram {
+      background: #CC0000 url(../Images/png/icoon-footer-instagram.png) no-repeat center center;
+      background-size: 2em; }
 
 h1 {
   margin: 1.429em 0 0.8em;
@@ -1492,7 +1500,7 @@ a#wapen {
   position: relative;
   z-index: 10; }
   #main .container {
-    padding: 0 1.2em 2em 2.8em; }
+    padding: 0 1.2em 2em 0.8em; }
 
 .container {
   position: relative;

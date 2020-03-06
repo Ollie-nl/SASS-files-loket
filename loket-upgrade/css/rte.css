@@ -865,7 +865,9 @@ article p::selection, article h1::selection, article h2::selection, article h3::
 #main {
   position: relative; }
   #main .container {
-    padding: 0 0.8em; }
+    padding: 0 1.2em 2em 0.8em; }
+  #main > .container {
+    background: #FFFFFF; }
 
 .grid-wrap {
   padding: 0 1.2em; }
@@ -1080,7 +1082,7 @@ ul.linklijst,
   clear: left; }
 
 .breakout .grid-wrap-breakout {
-  margin: 0 -1.2em; }
+  margin: 0 -2em 0 0.8em; }
 
 .breakout .article-width-breakout {
   width: 100%; }
@@ -1290,7 +1292,13 @@ footer {
         border: 0; }
     footer .social .twitter {
       background: #CC0000 url(../Images/svgicoon-footer-twitter.svg) no-repeat center center;
-      background-size: 1.8em; }
+      background-size: 1.9em; }
     footer .social .facebook {
       background: #CC0000 url(../Images/svgicoon-footer-facebook.svg) no-repeat center center;
-      background-size: 1.5em; }
+      background-size: 1.9em; }
+    footer .social .linkedin {
+      background: #CC0000 url(../Images/svgicoon-footer-linkedin.svg) no-repeat center center;
+      background-size: 2em; }
+    footer .social .instagram {
+      background: #CC0000 url(../Images/svgicoon-footer-instagram.svg) no-repeat center center;
+      background-size: 2em; }

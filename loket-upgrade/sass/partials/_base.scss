@@ -22,8 +22,8 @@ $wit:					#FFFFFF;
 $zwart:					#000000;
 $asfalt:				#1D1D1C;
 
-$donkergrijs:		#333333;
-$schemergrijs:	#777777; // Border van hoofdmenu
+$donkergrijs:			#333333;
+$schemergrijs:			#777777; // Border van hoofdmenu
 $grijs:					#ADADAB; // Huisstijlgrijs
 $randgrijs:			#B3B3B3; // Border van inputvelden
 $midgrijs:			#E5E5E5; // Kruimelpad en bezoekinfoblok
@@ -872,17 +872,16 @@ article p::selection, article h1::selection, article h2::selection, article h3::
 
 	.container
 	{
-		padding: 0 0.8em;
+		padding: 0 1.2em 2em 0.8em;
 	}
 
 	& > .container
 	{
 		// new style, remove yellow bar
-		//background: $wit url($huisstijlbalk) 0 0 no-repeat;		
+		//background: $wit url($huisstijlbalk) 0 0 no-repeat;	
+		background: $wit;		
 	}
 }
-
-
 
 
 .grid-wrap
@@ -1185,7 +1184,8 @@ ul.linklijst,
 {
 	.grid-wrap-breakout
 	{
-		margin: 0 -1.2em;
+		margin: 0 -2em 0 0.8em;
+
 	}
 	.article-width-breakout
 	{
@@ -1560,12 +1560,22 @@ footer {
 		.twitter
 		{
 			background: $rood url($icoon-footer-twitter) no-repeat center center;
-			background-size: 1.8em;
+			background-size: 1.9em;
 		}
 		.facebook
 		{
 			background: $rood url($icoon-footer-facebook) no-repeat center center;
-			background-size: 1.5em;			
+			background-size: 1.9em;			
+		}
+		.linkedin
+		{
+			background: $rood url($icoon-footer-linkedin) no-repeat center center;
+			background-size: 2em;
+		}
+		.instagram
+		{
+			background: $rood url($icoon-footer-instagram) no-repeat center center;
+			background-size: 2em;			
 		}
 	}
 }
