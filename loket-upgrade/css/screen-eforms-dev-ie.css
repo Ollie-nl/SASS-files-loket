@@ -3302,13 +3302,13 @@ input[id$="_len_90"] {
   width: 90%; }
 
 textarea[id$="_hi_100"] {
-  height: 100px; }
+  height: 100px !important; }
 
 textarea[id$="_hi_150"] {
-  height: 150px; }
+  height: 150px !important; }
 
 textarea[id$="_hi_200"] {
-  height: 200px; }
+  height: 200px !important; }
 
 .confirmation {
   padding: 1em 0 0;

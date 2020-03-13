@@ -96,15 +96,15 @@ input[id$="_len_90"]
 
 textarea[id$="_hi_100"]
 {
-	@include tweakpoint('min-width',60em) { height: 100px }
+	@include tweakpoint('min-width',60em) { height: 100px !important; }
 }
 
 textarea[id$="_hi_150"]
 {
-	@include tweakpoint('min-width',60em) { height: 150px; }
+	@include tweakpoint('min-width',60em) { height: 150px !important; }
 }
 
 textarea[id$="_hi_200"]
 {
-	@include tweakpoint('min-width',60em) { height: 200px; }
+	@include tweakpoint('min-width',60em) { height: 200px !important; }
 }
