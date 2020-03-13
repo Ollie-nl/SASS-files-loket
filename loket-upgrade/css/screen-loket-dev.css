@@ -1606,7 +1606,7 @@ footer {
   .breakout .article-width-breakout {
     width: 100%; }
   .breakout .page-width-breakout {
-    margin: 0 -1.8em; }
+    margin: 0 -0.8em; }
   .grid-column-1of2 {
     width: 50%; }
   .grid-column-left,
@@ -1711,7 +1711,7 @@ footer {
     margin: -2em -2em 0;
     padding: 3.5em 2em 2em; }
     footer .container {
-      padding: 0 1.2em 0 3em; }
+      padding: 0 1.2em 0 1em; }
     footer a[href^=tel] {
       text-decoration: none; }
     footer .social {
@@ -1768,7 +1768,7 @@ footer {
   .breakout .article-width-breakout {
     width: 150%; }
   .breakout .page-width-breakout {
-    margin-left: -2.8em;
+    margin-left: -0.8em;
     margin-right: -1.2em; }
   .grid-columns .grid-column-1of6 {
     width: 16.66%; }

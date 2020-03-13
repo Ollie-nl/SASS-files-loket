@@ -63,7 +63,8 @@ footer
 	
 	.container
 	{
-		padding: 0 1.2em 0 3em;
+		//padding: 0 1.2em 0 3em;
+		padding: 0 1.2em 0 1em;
 	}
 
 	a[href^=tel] {
@@ -206,7 +207,7 @@ article
 	}
 	.page-width-breakout
 	{
-		margin-left: -2.8em;
+		margin-left: -0.8em;
 		margin-right: -1.2em;
 	}
 }
