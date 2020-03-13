@@ -3130,7 +3130,10 @@ footer {
   cursor: pointer; }
   .bodycopy .gadget_alfabet a:hover, .bodycopy #productsAlphabet .js-tablist a:hover, #productsAlphabet .bodycopy .js-tablist a:hover {
     background-color: #D94E51;
-    border-color: #D94E51; }
+    border-color: #D94E51;
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05); }
   .bodycopy .gadget_alfabet a[aria-selected="true"], .bodycopy #productsAlphabet .js-tablist a[aria-selected="true"], #productsAlphabet .bodycopy .js-tablist a[aria-selected="true"] {
     border-color: #FFCC00;
     background-color: #FFFFFF;
