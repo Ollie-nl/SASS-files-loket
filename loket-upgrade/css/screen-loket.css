@@ -2967,6 +2967,29 @@ footer {
       margin-left: 1.2em;
       padding-left: 1.2em; } }
 
+.embed-wrap {
+  display: block;
+  max-width: 100%;
+  height: 0;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 56.25%; }
+  .embed-wrap iframe,
+  .embed-wrap object,
+  .embed-wrap embed {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+.herald.video {
+  background-color: #E5E5E5;
+  padding-top: 1px; }
+  @media only screen and (min-width: 60em) {
+    .herald.video {
+      padding-top: 0; } }
+
 /*  DIGITAL SERVICES ELEMENTS
  *
  */
@@ -3310,6 +3333,9 @@ footer {
       background-size: 3em; }
     .login-wrap p.eherkenning {
       background: url(../../base/files/getImageAction.do?key=kl_logo-eherkenning-SVG) 0 0 no-repeat;
+      background-size: 3em; }
+    .login-wrap p.eidas {
+      background: url(../../base/files/getImageAction.do?key=kl_logo-eidas-SVG) 0 0 no-repeat;
       background-size: 3em; }
     .login-wrap p.logout, .login-wrap p.login {
       padding-left: 3.6em; }

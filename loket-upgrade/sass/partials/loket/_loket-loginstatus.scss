@@ -44,6 +44,11 @@
 			background: url($logo-eherkenning) 0 0 no-repeat;
 			background-size: 3em;
 		}
+		&.eidas
+		{
+			background: url($logo-eidas) 0 0 no-repeat;
+			background-size: 3em;
+		}
 
 		&.logout,
 		&.login

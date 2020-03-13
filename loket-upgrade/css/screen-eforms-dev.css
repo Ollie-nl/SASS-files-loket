@@ -2787,6 +2787,9 @@ footer {
     .login-wrap p.eherkenning {
       background: url(../Images/svg/logo-eherkenning.svg) 0 0 no-repeat;
       background-size: 3em; }
+    .login-wrap p.eidas {
+      background: url(../Images/svg/logo-eidas.svg) 0 0 no-repeat;
+      background-size: 3em; }
     .login-wrap p.logout, .login-wrap p.login {
       padding-left: 3.6em; }
   .login-wrap .logout + p {

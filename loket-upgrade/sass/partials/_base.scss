@@ -1203,8 +1203,7 @@ ul.linklijst,
 	.container
 	{
 		overflow: hidden;
-		margin: 0;
-		
+		margin: 0;	
 		&:after
 		{
 			@include floatclear;

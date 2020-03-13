@@ -2787,6 +2787,9 @@ footer {
     .login-wrap p.eherkenning {
       background: url(../../base/files/getImageAction.do?key=kl_logo-eherkenning-SVG) 0 0 no-repeat;
       background-size: 3em; }
+    .login-wrap p.eidas {
+      background: url(../../base/files/getImageAction.do?key=kl_logo-eidas-SVG) 0 0 no-repeat;
+      background-size: 3em; }
     .login-wrap p.logout, .login-wrap p.login {
       padding-left: 3.6em; }
   .login-wrap .logout + p {

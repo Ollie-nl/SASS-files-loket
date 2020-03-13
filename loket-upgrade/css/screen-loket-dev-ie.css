@@ -2653,6 +2653,27 @@ html.ie10 #search input[type="text"] {
     margin-left: 1.2em;
     padding-left: 1.2em; }
 
+.embed-wrap {
+  display: block;
+  max-width: 100%;
+  height: 0;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 56.25%; }
+  .embed-wrap iframe,
+  .embed-wrap object,
+  .embed-wrap embed {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+.herald.video {
+  background-color: #E5E5E5;
+  padding-top: 1px;
+  padding-top: 0; }
+
 /*  DIGITAL SERVICES ELEMENTS
  *
  */
@@ -2996,6 +3017,9 @@ html.ie10 #search input[type="text"] {
       background-size: 3em; }
     .login-wrap p.eherkenning {
       background: url(../Images/png/logo-eherkenning.png) 0 0 no-repeat;
+      background-size: 3em; }
+    .login-wrap p.eidas {
+      background: url(../Images/png/logo-eidas.png) 0 0 no-repeat;
       background-size: 3em; }
     .login-wrap p.logout, .login-wrap p.login {
       padding-left: 3.6em; }

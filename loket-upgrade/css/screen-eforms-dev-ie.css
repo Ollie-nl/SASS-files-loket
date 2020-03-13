@@ -2473,6 +2473,9 @@ html.ie10 #search input[type="text"] {
     .login-wrap p.eherkenning {
       background: url(../Images/png/logo-eherkenning.png) 0 0 no-repeat;
       background-size: 3em; }
+    .login-wrap p.eidas {
+      background: url(../Images/png/logo-eidas.png) 0 0 no-repeat;
+      background-size: 3em; }
     .login-wrap p.logout, .login-wrap p.login {
       padding-left: 3.6em; }
   .login-wrap .logout + p {
