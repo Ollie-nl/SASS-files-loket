@@ -3582,7 +3582,7 @@ input[id="houseRemark"],
 input[id$="toevoeging"],
 input[id$="_len_20"] {
   width: 40%;
-  max-width: 4em; }
+  max-width: 7em; }
   @media only screen and (min-width: 60em) {
     input[id*="nitials"],
     input[id$="voorletters"],
@@ -3602,7 +3602,7 @@ input[id$="_len_20"] {
 
 input[id$="_len_10"] {
   width: 40%;
-  max-width: 3em; }
+  max-width: 4em; }
   @media only screen and (min-width: 60em) {
     input[id$="_len_10"] {
       width: 10%; } }
