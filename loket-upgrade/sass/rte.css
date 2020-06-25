@@ -124,7 +124,6 @@ dfn {
  */
 hr {
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -348,7 +347,6 @@ html input[disabled] {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -599,16 +597,9 @@ figcaption {
     left: 0.5em; }
 
 .album {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
   align-items: flex-start;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
   .album .small {
     width: 47%; }
@@ -663,7 +654,6 @@ thead th:first-child {
     border-color: #3669A5;
     color: #FFFFFF;
     -webkit-transform: scale(1.02);
-    -ms-transform: scale(1.02);
     transform: scale(1.02); }
   .cta.sec {
     margin-top: 0;
@@ -676,7 +666,6 @@ thead th:first-child {
       background-image: url(../Images/svgpijltje-wit.svg);
       color: #FFFFFF;
       -webkit-transform: none;
-      -ms-transform: none;
       transform: none; }
   .cta.org {
     background-color: #BC3983;
@@ -745,29 +734,26 @@ label {
   label.radio {
     font-weight: normal;
     padding-right: 2em; }
-  input + label,
-  div + label {
+  input + label, div + label {
     margin-top: 1.5em; }
 
-textarea,
-select, input {
+input, textarea,
+select {
   width: 100%;
   max-width: 28em;
   border: 1px solid #B3B3B3;
   border-bottom-width: 3px;
   padding: .5em .75em; }
-  textarea.error,
-  select.error, input.error, textarea.has-error,
-  select.has-error, input.has-error,
-  .has-error textarea,
-  .has-error select,
-  .has-error input {
+  input.error, textarea.error,
+  select.error, input.has-error, textarea.has-error,
+  select.has-error, .has-error input, .has-error textarea,
+  .has-error select {
     border-color: #CC0000; }
-  textarea.m,
-  select.m, input.m {
+  input.m, textarea.m,
+  select.m {
     max-width: 20em; }
-  textarea.s,
-  select.s, input.s {
+  input.s, textarea.s,
+  select.s {
     max-width: 10em; }
 
 input[type="radio"], input[type="checkbox"] {
@@ -793,27 +779,26 @@ input[type="submit"] {
   font-size: .9em;
   line-height: normal;
   border: 2px solid #2A5587; }
-  fieldset button, fieldset
-  input[type="submit"] {
+  fieldset button, fieldset input[type="submit"] {
     margin-top: 2em; }
   button.sec,
-  input[type="submit"].sec {
+  input.sec[type="submit"] {
     border: 2px solid #2A5587;
     color: #2A5587;
     background: #FFFFFF; }
   button.back, button.back:hover, button.back:focus,
-  input[type="submit"].back,
-  input[type="submit"].back:hover,
-  input[type="submit"].back:focus {
+  input.back[type="submit"],
+  input.back[type="submit"]:hover,
+  input.back[type="submit"]:focus {
     border: 2px solid #FFFFFF;
     text-decoration: underline;
     color: #2A5587;
     background: #FFFFFF;
     padding: 1em 1em .75em; }
   button.abort, button.abort:hover, button.abort:focus,
-  input[type="submit"].abort,
-  input[type="submit"].abort:hover,
-  input[type="submit"].abort:focus {
+  input.abort[type="submit"],
+  input.abort[type="submit"]:hover,
+  input.abort[type="submit"]:focus {
     border: 2px solid transparent;
     color: #2A5587;
     background: transparent;
@@ -821,15 +806,13 @@ input[type="submit"] {
   button:hover, button:focus, button.sec:hover, button.sec:focus,
   input[type="submit"]:hover,
   input[type="submit"]:focus,
-  input[type="submit"].sec:hover,
-  input[type="submit"].sec:focus {
+  input.sec[type="submit"]:hover,
+  input.sec[type="submit"]:focus {
     border: 2px solid #3669A5;
     background-color: #3669A5;
     color: #FFFFFF; }
 
 .keus {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex; }
   .keus span {
     display: block;
@@ -1052,7 +1035,6 @@ ul.linklijst,
       .news.spotlight h3 a {
         text-decoration: none;
         text-shadow: 0.1em 0.06em 0 white,-0.1em 0.06em 0 white,0.1em 0 0 white,-0.1em 0 0 white;
-        -webkit-box-shadow: inset 0 -2px 0 #2A5587;
         box-shadow: inset 0 -2px 0 #2A5587;
         text-rendering: optimizeLegibility; }
     .news.spotlight ul:after {
@@ -1219,7 +1201,6 @@ span.tel {
       padding: 0;
       border: 0;
       font-size: 1.5em; } }
-
 section.contact a[href^="tel"],
 section.contact span.tel,
 footer a[href^="tel"],

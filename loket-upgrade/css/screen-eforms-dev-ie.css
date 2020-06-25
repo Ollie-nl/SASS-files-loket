@@ -107,7 +107,6 @@ blockquote {
  * Known issue: no IE 6/7 normalization.
  */
 hr {
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -121,7 +120,7 @@ mark {
 /**
  * Address margins set differently in IE 6/7.
  */
-p,
+p, .fd-zone .upload_error, .inputfield_container_error > span,
 pre {
   margin: 1em 0; }
 
@@ -269,9 +268,7 @@ legend {
  *    and Chrome.
  * 3. Improve appearance and consistency in all browsers.
  */
-
-button,
-.fd-zone .input-choose-btn,
+button, .fd-zone .input-choose-btn,
 input,
 select,
 textarea {
@@ -288,9 +285,7 @@ textarea {
  * Address Firefox 3+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-
-button,
-.fd-zone .input-choose-btn,
+button, .fd-zone .input-choose-btn,
 input {
   line-height: normal; }
 
@@ -300,9 +295,7 @@ input {
  * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
  * Correct `select` style inheritance in Firefox 4+ and Opera.
  */
-
-button,
-.fd-zone .input-choose-btn,
+button, .fd-zone .input-choose-btn,
 select {
   text-transform: none; }
 
@@ -315,9 +308,7 @@ select {
  * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
  *    Known issue: inner spacing remains in IE 6.
  */
-
-button,
-.fd-zone .input-choose-btn,
+button, .fd-zone .input-choose-btn,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -343,7 +334,6 @@ html input[disabled] {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -462,10 +452,12 @@ h2, .h2 {
   line-height: 1.2;
   font-weight: bold; }
 
-.upper, .results-type, .login-wrap h2, #popup_cancel, .navigation_button .previous-button, #Stoppen_button a,
-#Annuleren_button button, #Annuleren_button .fd-zone .input-choose-btn, .fd-zone #Annuleren_button .input-choose-btn,
-.navigation_button .form_cancel-button, .eform_result_heading,
-form h3 {
+.upper, .eform_result_heading,
+form h3, #Stoppen_button a,
+#Annuleren_button button,
+#Annuleren_button .fd-zone .input-choose-btn,
+.fd-zone #Annuleren_button .input-choose-btn,
+.navigation_button .form_cancel-button, .navigation_button .previous-button, #popup_cancel, .login-wrap h2, .results-type {
   padding: .5em 0 .1em;
   font-weight: bold;
   text-transform: uppercase;
@@ -500,7 +492,7 @@ h4 + h5,
 h5 + h6 {
   margin-top: 0; }
 
-p {
+p, .fd-zone .upload_error, .inputfield_container_error > span {
   margin: 0 0 1em;
   color: #1D1D1C; }
 
@@ -512,7 +504,7 @@ article {
   article .intro {
     font-size: 1.125em;
     margin-bottom: 1.8em; }
-    article .intro p {
+    article .intro p, article .intro .fd-zone .upload_error, .fd-zone article .intro .upload_error, article .intro .inputfield_container_error > span {
       margin-bottom: 0.5em; }
   article em {
     font-style: normal; }
@@ -550,9 +542,9 @@ a {
   .arrow:hover, .arrow:focus {
     text-decoration: underline; }
 
-p + p > .arrow:first-child {
+p + p > .arrow:first-child, .fd-zone .upload_error + p > .arrow:first-child, .fd-zone p + .upload_error > .arrow:first-child, .fd-zone .upload_error + .upload_error > .arrow:first-child, .inputfield_container_error > span + p > .arrow:first-child, .fd-zone .inputfield_container_error > span + .upload_error > .arrow:first-child, .inputfield_container_error > p + span > .arrow:first-child, .fd-zone .inputfield_container_error > .upload_error + span > .arrow:first-child, .inputfield_container_error > span + span > .arrow:first-child {
   margin-top: -0.5em; }
-  .news p + p > .arrow:first-child {
+  .news p + p > .arrow:first-child, .news .fd-zone .upload_error + p > .arrow:first-child, .fd-zone .news .upload_error + p > .arrow:first-child, .news .fd-zone p + .upload_error > .arrow:first-child, .fd-zone .news p + .upload_error > .arrow:first-child, .news .fd-zone .upload_error + .upload_error > .arrow:first-child, .fd-zone .news .upload_error + .upload_error > .arrow:first-child, .news .inputfield_container_error > span + p > .arrow:first-child, .news .fd-zone .inputfield_container_error > span + .upload_error > .arrow:first-child, .fd-zone .news .inputfield_container_error > span + .upload_error > .arrow:first-child, .news .inputfield_container_error > p + span > .arrow:first-child, .news .fd-zone .inputfield_container_error > .upload_error + span > .arrow:first-child, .fd-zone .news .inputfield_container_error > .upload_error + span > .arrow:first-child, .news .inputfield_container_error > span + span > .arrow:first-child {
     margin-top: 0.5em; }
 
 .bodycopy ul, .bodycopy ol {
@@ -602,16 +594,9 @@ figcaption {
     left: 0.5em; }
 
 .album {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
   align-items: flex-start;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
   .album .small {
     width: 47%; }
@@ -638,8 +623,11 @@ td {
   padding: 0.5em 0 0.5em 0.4em;
   border-bottom: 1px solid #E5E5E5;
   text-align: left; }
-  th p,
-  td p {
+  th p, th .fd-zone .upload_error, .fd-zone th .upload_error, th .inputfield_container_error > span,
+  td p,
+  td .fd-zone .upload_error,
+  .fd-zone td .upload_error,
+  td .inputfield_container_error > span {
     margin-bottom: 0; }
 
 thead th {
@@ -652,9 +640,11 @@ thead th {
 thead th:first-child {
   width: auto; }
 
-.cta, .inputfield_container .multiselectbutton input, .navigation_button .form_close_pay-button,
-.navigation_button .register-button, #Formulieropslaan_button a, #Afsluiten_button button, #Afsluiten_button .fd-zone .input-choose-btn, .fd-zone #Afsluiten_button .input-choose-btn,
-#Klaar_button button, #Klaar_button .fd-zone .input-choose-btn, .fd-zone #Klaar_button .input-choose-btn {
+.cta, #Afsluiten_button button, #Afsluiten_button .fd-zone .input-choose-btn, .fd-zone #Afsluiten_button .input-choose-btn,
+#Klaar_button button,
+#Klaar_button .fd-zone .input-choose-btn,
+.fd-zone #Klaar_button .input-choose-btn, #Formulieropslaan_button a, .navigation_button .form_close_pay-button,
+.navigation_button .register-button, .inputfield_container .multiselectbutton input {
   display: inline-block;
   margin: 0 .5em 0.5em 0;
   border: 2px solid #2A5587;
@@ -663,73 +653,165 @@ thead th:first-child {
   color: #FFFFFF;
   text-decoration: none;
   font-size: 1.125em; }
-  .cta:hover, .inputfield_container .multiselectbutton input:hover, .navigation_button .form_close_pay-button:hover,
-  .navigation_button .register-button:hover, #Formulieropslaan_button a:hover, #Afsluiten_button button:hover, #Afsluiten_button .fd-zone .input-choose-btn:hover, .fd-zone #Afsluiten_button .input-choose-btn:hover,
-  #Klaar_button button:hover, #Klaar_button .fd-zone .input-choose-btn:hover, .fd-zone #Klaar_button .input-choose-btn:hover, .cta:focus, .inputfield_container .multiselectbutton input:focus, .navigation_button .form_close_pay-button:focus,
-  .navigation_button .register-button:focus, #Formulieropslaan_button a:focus, #Afsluiten_button button:focus, #Afsluiten_button .fd-zone .input-choose-btn:focus, .fd-zone #Afsluiten_button .input-choose-btn:focus,
-  #Klaar_button button:focus, #Klaar_button .fd-zone .input-choose-btn:focus, .fd-zone #Klaar_button .input-choose-btn:focus {
+  .cta:hover, #Afsluiten_button button:hover, #Afsluiten_button .fd-zone .input-choose-btn:hover, .fd-zone #Afsluiten_button .input-choose-btn:hover,
+  #Klaar_button button:hover,
+  #Klaar_button .fd-zone .input-choose-btn:hover,
+  .fd-zone #Klaar_button .input-choose-btn:hover, #Formulieropslaan_button a:hover, .navigation_button .form_close_pay-button:hover,
+  .navigation_button .register-button:hover, .inputfield_container .multiselectbutton input:hover, .cta:focus, #Afsluiten_button button:focus, #Afsluiten_button .fd-zone .input-choose-btn:focus, .fd-zone #Afsluiten_button .input-choose-btn:focus,
+  #Klaar_button button:focus,
+  #Klaar_button .fd-zone .input-choose-btn:focus,
+  .fd-zone #Klaar_button .input-choose-btn:focus, #Formulieropslaan_button a:focus, .navigation_button .form_close_pay-button:focus,
+  .navigation_button .register-button:focus, .inputfield_container .multiselectbutton input:focus {
     background-color: #3669A5;
     border-color: #3669A5;
     color: #FFFFFF;
     -webkit-transform: scale(1.02);
-    -ms-transform: scale(1.02);
     transform: scale(1.02); }
-  .cta.sec, .inputfield_container .multiselectbutton input.sec, .navigation_button .sec.form_close_pay-button,
-  .navigation_button .sec.register-button, #Formulieropslaan_button a.sec, #Afsluiten_button button.sec, #Afsluiten_button .fd-zone .sec.input-choose-btn, .fd-zone #Afsluiten_button .sec.input-choose-btn,
-  #Klaar_button button.sec, #Klaar_button .fd-zone .sec.input-choose-btn, .fd-zone #Klaar_button .sec.input-choose-btn {
+  .cta.sec, #Afsluiten_button button.sec, #Afsluiten_button .fd-zone .sec.input-choose-btn, .fd-zone #Afsluiten_button .sec.input-choose-btn,
+  #Klaar_button button.sec,
+  #Klaar_button .fd-zone .sec.input-choose-btn,
+  .fd-zone #Klaar_button .sec.input-choose-btn, #Formulieropslaan_button a.sec, .navigation_button .sec.form_close_pay-button,
+  .navigation_button .sec.register-button, .inputfield_container .multiselectbutton input.sec {
     margin-top: 0;
     border: 2px solid #2A5587;
     background: url(../Images/png/pijltje-blauw.png) no-repeat right 1em top 1.12em;
     color: #2A5587; }
-    .cta.sec:hover, .inputfield_container .multiselectbutton input.sec:hover, .navigation_button .sec.form_close_pay-button:hover,
-    .navigation_button .sec.register-button:hover, #Formulieropslaan_button a.sec:hover, #Afsluiten_button button.sec:hover, #Afsluiten_button .fd-zone .sec.input-choose-btn:hover, .fd-zone #Afsluiten_button .sec.input-choose-btn:hover,
-    #Klaar_button button.sec:hover, #Klaar_button .fd-zone .sec.input-choose-btn:hover, .fd-zone #Klaar_button .sec.input-choose-btn:hover, .cta.sec:focus, .inputfield_container .multiselectbutton input.sec:focus, .navigation_button .sec.form_close_pay-button:focus,
-    .navigation_button .sec.register-button:focus, #Formulieropslaan_button a.sec:focus, #Afsluiten_button button.sec:focus, #Afsluiten_button .fd-zone .sec.input-choose-btn:focus, .fd-zone #Afsluiten_button .sec.input-choose-btn:focus,
-    #Klaar_button button.sec:focus, #Klaar_button .fd-zone .sec.input-choose-btn:focus, .fd-zone #Klaar_button .sec.input-choose-btn:focus {
+    .cta.sec:hover, #Afsluiten_button button.sec:hover, #Afsluiten_button .fd-zone .sec.input-choose-btn:hover, .fd-zone #Afsluiten_button .sec.input-choose-btn:hover,
+    #Klaar_button button.sec:hover,
+    #Klaar_button .fd-zone .sec.input-choose-btn:hover,
+    .fd-zone #Klaar_button .sec.input-choose-btn:hover, #Formulieropslaan_button a.sec:hover, .navigation_button .sec.form_close_pay-button:hover,
+    .navigation_button .sec.register-button:hover, .inputfield_container .multiselectbutton input.sec:hover, .cta.sec:focus, #Afsluiten_button button.sec:focus, #Afsluiten_button .fd-zone .sec.input-choose-btn:focus, .fd-zone #Afsluiten_button .sec.input-choose-btn:focus,
+    #Klaar_button button.sec:focus,
+    #Klaar_button .fd-zone .sec.input-choose-btn:focus,
+    .fd-zone #Klaar_button .sec.input-choose-btn:focus, #Formulieropslaan_button a.sec:focus, .navigation_button .sec.form_close_pay-button:focus,
+    .navigation_button .sec.register-button:focus, .inputfield_container .multiselectbutton input.sec:focus {
       border-color: #3669A5;
       background-color: #3669A5;
       background-image: url(../Images/png/pijltje-wit.png);
       color: #FFFFFF;
       -webkit-transform: none;
-      -ms-transform: none;
       transform: none; }
-  .cta.org, .inputfield_container .multiselectbutton input.org, .navigation_button .org.form_close_pay-button,
-  .navigation_button .org.register-button, #Formulieropslaan_button a.org, #Afsluiten_button button.org, #Afsluiten_button .fd-zone .org.input-choose-btn, .fd-zone #Afsluiten_button .org.input-choose-btn,
-  #Klaar_button button.org, #Klaar_button .fd-zone .org.input-choose-btn, .fd-zone #Klaar_button .org.input-choose-btn {
+  .cta.org, #Afsluiten_button button.org, #Afsluiten_button .fd-zone .org.input-choose-btn, .fd-zone #Afsluiten_button .org.input-choose-btn,
+  #Klaar_button button.org,
+  #Klaar_button .fd-zone .org.input-choose-btn,
+  .fd-zone #Klaar_button .org.input-choose-btn, #Formulieropslaan_button a.org, .navigation_button .org.form_close_pay-button,
+  .navigation_button .org.register-button, .inputfield_container .multiselectbutton input.org {
     background-color: #BC3983;
     border-color: #BC3983; }
-    .cta.org:hover, .inputfield_container .multiselectbutton input.org:hover, .navigation_button .org.form_close_pay-button:hover,
-    .navigation_button .org.register-button:hover, #Formulieropslaan_button a.org:hover, #Afsluiten_button button.org:hover, #Afsluiten_button .fd-zone .org.input-choose-btn:hover, .fd-zone #Afsluiten_button .org.input-choose-btn:hover,
-    #Klaar_button button.org:hover, #Klaar_button .fd-zone .org.input-choose-btn:hover, .fd-zone #Klaar_button .org.input-choose-btn:hover, .cta.org:focus, .inputfield_container .multiselectbutton input.org:focus, .navigation_button .org.form_close_pay-button:focus,
-    .navigation_button .org.register-button:focus, #Formulieropslaan_button a.org:focus, #Afsluiten_button button.org:focus, #Afsluiten_button .fd-zone .org.input-choose-btn:focus, .fd-zone #Afsluiten_button .org.input-choose-btn:focus,
-    #Klaar_button button.org:focus, #Klaar_button .fd-zone .org.input-choose-btn:focus, .fd-zone #Klaar_button .org.input-choose-btn:focus {
+    .cta.org:hover, #Afsluiten_button button.org:hover, #Afsluiten_button .fd-zone .org.input-choose-btn:hover, .fd-zone #Afsluiten_button .org.input-choose-btn:hover,
+    #Klaar_button button.org:hover,
+    #Klaar_button .fd-zone .org.input-choose-btn:hover,
+    .fd-zone #Klaar_button .org.input-choose-btn:hover, #Formulieropslaan_button a.org:hover, .navigation_button .org.form_close_pay-button:hover,
+    .navigation_button .org.register-button:hover, .inputfield_container .multiselectbutton input.org:hover, .cta.org:focus, #Afsluiten_button button.org:focus, #Afsluiten_button .fd-zone .org.input-choose-btn:focus, .fd-zone #Afsluiten_button .org.input-choose-btn:focus,
+    #Klaar_button button.org:focus,
+    #Klaar_button .fd-zone .org.input-choose-btn:focus,
+    .fd-zone #Klaar_button .org.input-choose-btn:focus, #Formulieropslaan_button a.org:focus, .navigation_button .org.form_close_pay-button:focus,
+    .navigation_button .org.register-button:focus, .inputfield_container .multiselectbutton input.org:focus {
       background-color: #D35A9E;
       border-color: #D35A9E; }
-  .cta + .cta, .inputfield_container .multiselectbutton input + .cta, .navigation_button .form_close_pay-button + .cta, .navigation_button .register-button + .cta, #Formulieropslaan_button a + .cta, #Afsluiten_button button + .cta, #Afsluiten_button .fd-zone .input-choose-btn + .cta, .fd-zone #Afsluiten_button .input-choose-btn + .cta, #Klaar_button button + .cta, #Klaar_button .fd-zone .input-choose-btn + .cta, .fd-zone #Klaar_button .input-choose-btn + .cta, .inputfield_container .multiselectbutton .cta + input, .inputfield_container .multiselectbutton input + input, .navigation_button .inputfield_container .multiselectbutton .form_close_pay-button + input, .inputfield_container .multiselectbutton .navigation_button .form_close_pay-button + input, .navigation_button .inputfield_container .multiselectbutton .register-button + input, .inputfield_container .multiselectbutton .navigation_button .register-button + input, #Formulieropslaan_button .inputfield_container .multiselectbutton a + input, .inputfield_container .multiselectbutton #Formulieropslaan_button a + input, #Afsluiten_button .inputfield_container .multiselectbutton button + input, .inputfield_container .multiselectbutton #Afsluiten_button button + input, #Afsluiten_button .fd-zone .inputfield_container .multiselectbutton .input-choose-btn + input, .inputfield_container .multiselectbutton #Afsluiten_button .fd-zone .input-choose-btn + input, .fd-zone #Afsluiten_button .inputfield_container .multiselectbutton .input-choose-btn + input, .inputfield_container .multiselectbutton .fd-zone #Afsluiten_button .input-choose-btn + input, #Klaar_button .inputfield_container .multiselectbutton button + input, .inputfield_container .multiselectbutton #Klaar_button button + input, #Klaar_button .fd-zone .inputfield_container .multiselectbutton .input-choose-btn + input, .inputfield_container .multiselectbutton #Klaar_button .fd-zone .input-choose-btn + input, .fd-zone #Klaar_button .inputfield_container .multiselectbutton .input-choose-btn + input, .inputfield_container .multiselectbutton .fd-zone #Klaar_button .input-choose-btn + input, .navigation_button .cta + .form_close_pay-button, .inputfield_container .multiselectbutton .navigation_button input + .form_close_pay-button, .navigation_button .inputfield_container .multiselectbutton input + .form_close_pay-button, .navigation_button .form_close_pay-button + .form_close_pay-button, .navigation_button .register-button + .form_close_pay-button, #Formulieropslaan_button .navigation_button a + .form_close_pay-button, .navigation_button #Formulieropslaan_button a + .form_close_pay-button, #Afsluiten_button .navigation_button button + .form_close_pay-button, .navigation_button #Afsluiten_button button + .form_close_pay-button, #Afsluiten_button .fd-zone .navigation_button .input-choose-btn + .form_close_pay-button, .navigation_button #Afsluiten_button .fd-zone .input-choose-btn + .form_close_pay-button, .fd-zone #Afsluiten_button .navigation_button .input-choose-btn + .form_close_pay-button, .navigation_button .fd-zone #Afsluiten_button .input-choose-btn + .form_close_pay-button, #Klaar_button .navigation_button button + .form_close_pay-button, .navigation_button #Klaar_button button + .form_close_pay-button, #Klaar_button .fd-zone .navigation_button .input-choose-btn + .form_close_pay-button, .navigation_button #Klaar_button .fd-zone .input-choose-btn + .form_close_pay-button, .fd-zone #Klaar_button .navigation_button .input-choose-btn + .form_close_pay-button, .navigation_button .fd-zone #Klaar_button .input-choose-btn + .form_close_pay-button,
-  .navigation_button .cta + .register-button,
-  .inputfield_container .multiselectbutton .navigation_button input + .register-button, .navigation_button .inputfield_container .multiselectbutton input + .register-button,
-  .navigation_button .form_close_pay-button + .register-button,
-  .navigation_button .register-button + .register-button,
-  #Formulieropslaan_button .navigation_button a + .register-button, .navigation_button #Formulieropslaan_button a + .register-button,
-  #Afsluiten_button .navigation_button button + .register-button, .navigation_button #Afsluiten_button button + .register-button,
-  #Afsluiten_button .fd-zone .navigation_button .input-choose-btn + .register-button, .navigation_button #Afsluiten_button .fd-zone .input-choose-btn + .register-button,
-  .fd-zone #Afsluiten_button .navigation_button .input-choose-btn + .register-button, .navigation_button .fd-zone #Afsluiten_button .input-choose-btn + .register-button,
-  #Klaar_button .navigation_button button + .register-button, .navigation_button #Klaar_button button + .register-button,
-  #Klaar_button .fd-zone .navigation_button .input-choose-btn + .register-button, .navigation_button #Klaar_button .fd-zone .input-choose-btn + .register-button,
-  .fd-zone #Klaar_button .navigation_button .input-choose-btn + .register-button, .navigation_button .fd-zone #Klaar_button .input-choose-btn + .register-button, #Formulieropslaan_button .cta + a, .inputfield_container .multiselectbutton #Formulieropslaan_button input + a, #Formulieropslaan_button .inputfield_container .multiselectbutton input + a, .navigation_button #Formulieropslaan_button .form_close_pay-button + a, #Formulieropslaan_button .navigation_button .form_close_pay-button + a, .navigation_button #Formulieropslaan_button .register-button + a, #Formulieropslaan_button .navigation_button .register-button + a, #Formulieropslaan_button a + a, #Afsluiten_button #Formulieropslaan_button button + a, #Formulieropslaan_button #Afsluiten_button button + a, #Afsluiten_button .fd-zone #Formulieropslaan_button .input-choose-btn + a, #Formulieropslaan_button #Afsluiten_button .fd-zone .input-choose-btn + a, .fd-zone #Afsluiten_button #Formulieropslaan_button .input-choose-btn + a, #Formulieropslaan_button .fd-zone #Afsluiten_button .input-choose-btn + a, #Klaar_button #Formulieropslaan_button button + a, #Formulieropslaan_button #Klaar_button button + a, #Klaar_button .fd-zone #Formulieropslaan_button .input-choose-btn + a, #Formulieropslaan_button #Klaar_button .fd-zone .input-choose-btn + a, .fd-zone #Klaar_button #Formulieropslaan_button .input-choose-btn + a, #Formulieropslaan_button .fd-zone #Klaar_button .input-choose-btn + a, #Afsluiten_button .cta + button, .inputfield_container .multiselectbutton #Afsluiten_button input + button, #Afsluiten_button .inputfield_container .multiselectbutton input + button, .navigation_button #Afsluiten_button .form_close_pay-button + button, #Afsluiten_button .navigation_button .form_close_pay-button + button, .navigation_button #Afsluiten_button .register-button + button, #Afsluiten_button .navigation_button .register-button + button, #Formulieropslaan_button #Afsluiten_button a + button, #Afsluiten_button #Formulieropslaan_button a + button, #Afsluiten_button button + button, #Afsluiten_button .fd-zone .input-choose-btn + button, .fd-zone #Afsluiten_button .input-choose-btn + button, #Klaar_button #Afsluiten_button button + button, #Afsluiten_button #Klaar_button button + button, #Klaar_button .fd-zone #Afsluiten_button .input-choose-btn + button, #Afsluiten_button #Klaar_button .fd-zone .input-choose-btn + button, .fd-zone #Klaar_button #Afsluiten_button .input-choose-btn + button, #Afsluiten_button .fd-zone #Klaar_button .input-choose-btn + button, #Afsluiten_button .fd-zone .cta + .input-choose-btn, .inputfield_container .multiselectbutton #Afsluiten_button .fd-zone input + .input-choose-btn, #Afsluiten_button .fd-zone .inputfield_container .multiselectbutton input + .input-choose-btn, .navigation_button #Afsluiten_button .fd-zone .form_close_pay-button + .input-choose-btn, #Afsluiten_button .fd-zone .navigation_button .form_close_pay-button + .input-choose-btn, .navigation_button #Afsluiten_button .fd-zone .register-button + .input-choose-btn, #Afsluiten_button .fd-zone .navigation_button .register-button + .input-choose-btn, #Formulieropslaan_button #Afsluiten_button .fd-zone a + .input-choose-btn, #Afsluiten_button .fd-zone #Formulieropslaan_button a + .input-choose-btn, #Afsluiten_button .fd-zone button + .input-choose-btn, #Afsluiten_button .fd-zone .input-choose-btn + .input-choose-btn, .fd-zone #Afsluiten_button .fd-zone .input-choose-btn + .input-choose-btn, #Klaar_button #Afsluiten_button .fd-zone button + .input-choose-btn, #Afsluiten_button .fd-zone #Klaar_button button + .input-choose-btn, #Klaar_button #Afsluiten_button .fd-zone .input-choose-btn + .input-choose-btn, #Afsluiten_button #Klaar_button .fd-zone .input-choose-btn + .input-choose-btn, #Afsluiten_button .fd-zone #Klaar_button .input-choose-btn + .input-choose-btn, .fd-zone #Afsluiten_button .cta + .input-choose-btn, .inputfield_container .multiselectbutton .fd-zone #Afsluiten_button input + .input-choose-btn, .fd-zone #Afsluiten_button .inputfield_container .multiselectbutton input + .input-choose-btn, .navigation_button .fd-zone #Afsluiten_button .form_close_pay-button + .input-choose-btn, .fd-zone #Afsluiten_button .navigation_button .form_close_pay-button + .input-choose-btn, .navigation_button .fd-zone #Afsluiten_button .register-button + .input-choose-btn, .fd-zone #Afsluiten_button .navigation_button .register-button + .input-choose-btn, #Formulieropslaan_button .fd-zone #Afsluiten_button a + .input-choose-btn, .fd-zone #Afsluiten_button #Formulieropslaan_button a + .input-choose-btn, .fd-zone #Afsluiten_button button + .input-choose-btn, #Afsluiten_button .fd-zone #Afsluiten_button .input-choose-btn + .input-choose-btn, .fd-zone #Afsluiten_button .input-choose-btn + .input-choose-btn, #Klaar_button .fd-zone #Afsluiten_button button + .input-choose-btn, .fd-zone #Afsluiten_button #Klaar_button button + .input-choose-btn, #Klaar_button .fd-zone #Afsluiten_button .input-choose-btn + .input-choose-btn, .fd-zone #Klaar_button #Afsluiten_button .input-choose-btn + .input-choose-btn, .fd-zone #Afsluiten_button #Klaar_button .input-choose-btn + .input-choose-btn,
+  .cta + .cta, #Afsluiten_button button + .cta, #Afsluiten_button .fd-zone .input-choose-btn + .cta, .fd-zone #Afsluiten_button .input-choose-btn + .cta,
+  #Klaar_button button + .cta,
+  #Klaar_button .fd-zone .input-choose-btn + .cta,
+  .fd-zone #Klaar_button .input-choose-btn + .cta, #Afsluiten_button .cta + button, #Afsluiten_button .fd-zone .cta + .input-choose-btn, .fd-zone #Afsluiten_button .cta + .input-choose-btn, #Afsluiten_button button + button, #Afsluiten_button .fd-zone .input-choose-btn + button, .fd-zone #Afsluiten_button .input-choose-btn + button, #Afsluiten_button .fd-zone button + .input-choose-btn, .fd-zone #Afsluiten_button button + .input-choose-btn, #Afsluiten_button .fd-zone .input-choose-btn + .input-choose-btn, .fd-zone #Afsluiten_button .input-choose-btn + .input-choose-btn,
   #Klaar_button .cta + button,
-  .inputfield_container .multiselectbutton #Klaar_button input + button, #Klaar_button .inputfield_container .multiselectbutton input + button,
-  .navigation_button #Klaar_button .form_close_pay-button + button, #Klaar_button .navigation_button .form_close_pay-button + button,
-  .navigation_button #Klaar_button .register-button + button, #Klaar_button .navigation_button .register-button + button,
-  #Formulieropslaan_button #Klaar_button a + button, #Klaar_button #Formulieropslaan_button a + button,
-  #Afsluiten_button #Klaar_button button + button, #Klaar_button #Afsluiten_button button + button,
-  #Afsluiten_button .fd-zone #Klaar_button .input-choose-btn + button, #Klaar_button #Afsluiten_button .fd-zone .input-choose-btn + button,
-  .fd-zone #Afsluiten_button #Klaar_button .input-choose-btn + button, #Klaar_button .fd-zone #Afsluiten_button .input-choose-btn + button,
+  #Klaar_button .fd-zone .cta + .input-choose-btn,
+  .fd-zone #Klaar_button .cta + .input-choose-btn,
   #Klaar_button button + button,
   #Klaar_button .fd-zone .input-choose-btn + button,
-  .fd-zone #Klaar_button .input-choose-btn + button, #Klaar_button .fd-zone .cta + .input-choose-btn, .inputfield_container .multiselectbutton #Klaar_button .fd-zone input + .input-choose-btn, #Klaar_button .fd-zone .inputfield_container .multiselectbutton input + .input-choose-btn, .navigation_button #Klaar_button .fd-zone .form_close_pay-button + .input-choose-btn, #Klaar_button .fd-zone .navigation_button .form_close_pay-button + .input-choose-btn, .navigation_button #Klaar_button .fd-zone .register-button + .input-choose-btn, #Klaar_button .fd-zone .navigation_button .register-button + .input-choose-btn, #Formulieropslaan_button #Klaar_button .fd-zone a + .input-choose-btn, #Klaar_button .fd-zone #Formulieropslaan_button a + .input-choose-btn, #Afsluiten_button #Klaar_button .fd-zone button + .input-choose-btn, #Klaar_button .fd-zone #Afsluiten_button button + .input-choose-btn, #Afsluiten_button #Klaar_button .fd-zone .input-choose-btn + .input-choose-btn, #Klaar_button #Afsluiten_button .fd-zone .input-choose-btn + .input-choose-btn, #Klaar_button .fd-zone #Afsluiten_button .input-choose-btn + .input-choose-btn, #Klaar_button .fd-zone button + .input-choose-btn, #Klaar_button .fd-zone .input-choose-btn + .input-choose-btn, .fd-zone #Klaar_button .fd-zone .input-choose-btn + .input-choose-btn, .fd-zone #Klaar_button .cta + .input-choose-btn, .inputfield_container .multiselectbutton .fd-zone #Klaar_button input + .input-choose-btn, .fd-zone #Klaar_button .inputfield_container .multiselectbutton input + .input-choose-btn, .navigation_button .fd-zone #Klaar_button .form_close_pay-button + .input-choose-btn, .fd-zone #Klaar_button .navigation_button .form_close_pay-button + .input-choose-btn, .navigation_button .fd-zone #Klaar_button .register-button + .input-choose-btn, .fd-zone #Klaar_button .navigation_button .register-button + .input-choose-btn, #Formulieropslaan_button .fd-zone #Klaar_button a + .input-choose-btn, .fd-zone #Klaar_button #Formulieropslaan_button a + .input-choose-btn, #Afsluiten_button .fd-zone #Klaar_button button + .input-choose-btn, .fd-zone #Klaar_button #Afsluiten_button button + .input-choose-btn, #Afsluiten_button .fd-zone #Klaar_button .input-choose-btn + .input-choose-btn, .fd-zone #Afsluiten_button #Klaar_button .input-choose-btn + .input-choose-btn, .fd-zone #Klaar_button #Afsluiten_button .input-choose-btn + .input-choose-btn, .fd-zone #Klaar_button button + .input-choose-btn, #Klaar_button .fd-zone #Klaar_button .input-choose-btn + .input-choose-btn, .fd-zone #Klaar_button .input-choose-btn + .input-choose-btn {
+  .fd-zone #Klaar_button .input-choose-btn + button,
+  #Klaar_button .fd-zone button + .input-choose-btn,
+  .fd-zone #Klaar_button button + .input-choose-btn,
+  #Klaar_button .fd-zone .input-choose-btn + .input-choose-btn,
+  .fd-zone #Klaar_button .input-choose-btn + .input-choose-btn, #Formulieropslaan_button a + .cta, #Formulieropslaan_button #Afsluiten_button a + button, #Formulieropslaan_button #Afsluiten_button .fd-zone a + .input-choose-btn, .fd-zone #Formulieropslaan_button #Afsluiten_button a + .input-choose-btn, #Afsluiten_button #Formulieropslaan_button a + button, #Afsluiten_button #Formulieropslaan_button .fd-zone a + .input-choose-btn, .fd-zone #Afsluiten_button #Formulieropslaan_button a + .input-choose-btn,
+  #Formulieropslaan_button #Klaar_button a + button,
+  #Formulieropslaan_button #Klaar_button .fd-zone a + .input-choose-btn,
+  .fd-zone #Formulieropslaan_button #Klaar_button a + .input-choose-btn,
+  #Klaar_button #Formulieropslaan_button a + button,
+  #Klaar_button #Formulieropslaan_button .fd-zone a + .input-choose-btn,
+  .fd-zone #Klaar_button #Formulieropslaan_button a + .input-choose-btn, #Formulieropslaan_button .cta + a, #Formulieropslaan_button #Afsluiten_button button + a, #Formulieropslaan_button #Afsluiten_button .fd-zone .input-choose-btn + a, .fd-zone #Formulieropslaan_button #Afsluiten_button .input-choose-btn + a, #Afsluiten_button #Formulieropslaan_button button + a, #Afsluiten_button #Formulieropslaan_button .fd-zone .input-choose-btn + a, .fd-zone #Afsluiten_button #Formulieropslaan_button .input-choose-btn + a,
+  #Formulieropslaan_button #Klaar_button button + a,
+  #Formulieropslaan_button #Klaar_button .fd-zone .input-choose-btn + a,
+  .fd-zone #Formulieropslaan_button #Klaar_button .input-choose-btn + a,
+  #Klaar_button #Formulieropslaan_button button + a,
+  #Klaar_button #Formulieropslaan_button .fd-zone .input-choose-btn + a,
+  .fd-zone #Klaar_button #Formulieropslaan_button .input-choose-btn + a, #Formulieropslaan_button a + a, .navigation_button .form_close_pay-button + .cta, .navigation_button #Afsluiten_button .form_close_pay-button + button, .navigation_button #Afsluiten_button .fd-zone .form_close_pay-button + .input-choose-btn, .fd-zone .navigation_button #Afsluiten_button .form_close_pay-button + .input-choose-btn, #Afsluiten_button .navigation_button .form_close_pay-button + button, #Afsluiten_button .navigation_button .fd-zone .form_close_pay-button + .input-choose-btn, .fd-zone #Afsluiten_button .navigation_button .form_close_pay-button + .input-choose-btn,
+  .navigation_button #Klaar_button .form_close_pay-button + button,
+  .navigation_button #Klaar_button .fd-zone .form_close_pay-button + .input-choose-btn,
+  .fd-zone .navigation_button #Klaar_button .form_close_pay-button + .input-choose-btn,
+  #Klaar_button .navigation_button .form_close_pay-button + button,
+  #Klaar_button .navigation_button .fd-zone .form_close_pay-button + .input-choose-btn,
+  .fd-zone #Klaar_button .navigation_button .form_close_pay-button + .input-choose-btn, .navigation_button #Formulieropslaan_button .form_close_pay-button + a, #Formulieropslaan_button .navigation_button .form_close_pay-button + a,
+  .navigation_button .register-button + .cta,
+  .navigation_button #Afsluiten_button .register-button + button,
+  .navigation_button #Afsluiten_button .fd-zone .register-button + .input-choose-btn,
+  .fd-zone .navigation_button #Afsluiten_button .register-button + .input-choose-btn,
+  #Afsluiten_button .navigation_button .register-button + button,
+  #Afsluiten_button .navigation_button .fd-zone .register-button + .input-choose-btn,
+  .fd-zone #Afsluiten_button .navigation_button .register-button + .input-choose-btn,
+  .navigation_button #Klaar_button .register-button + button,
+  .navigation_button #Klaar_button .fd-zone .register-button + .input-choose-btn,
+  .fd-zone .navigation_button #Klaar_button .register-button + .input-choose-btn,
+  #Klaar_button .navigation_button .register-button + button,
+  #Klaar_button .navigation_button .fd-zone .register-button + .input-choose-btn,
+  .fd-zone #Klaar_button .navigation_button .register-button + .input-choose-btn,
+  .navigation_button #Formulieropslaan_button .register-button + a,
+  #Formulieropslaan_button .navigation_button .register-button + a, .navigation_button .cta + .form_close_pay-button, .navigation_button #Afsluiten_button button + .form_close_pay-button, .navigation_button #Afsluiten_button .fd-zone .input-choose-btn + .form_close_pay-button, .fd-zone .navigation_button #Afsluiten_button .input-choose-btn + .form_close_pay-button, #Afsluiten_button .navigation_button button + .form_close_pay-button, #Afsluiten_button .navigation_button .fd-zone .input-choose-btn + .form_close_pay-button, .fd-zone #Afsluiten_button .navigation_button .input-choose-btn + .form_close_pay-button,
+  .navigation_button #Klaar_button button + .form_close_pay-button,
+  .navigation_button #Klaar_button .fd-zone .input-choose-btn + .form_close_pay-button,
+  .fd-zone .navigation_button #Klaar_button .input-choose-btn + .form_close_pay-button,
+  #Klaar_button .navigation_button button + .form_close_pay-button,
+  #Klaar_button .navigation_button .fd-zone .input-choose-btn + .form_close_pay-button,
+  .fd-zone #Klaar_button .navigation_button .input-choose-btn + .form_close_pay-button, .navigation_button #Formulieropslaan_button a + .form_close_pay-button, #Formulieropslaan_button .navigation_button a + .form_close_pay-button, .navigation_button .form_close_pay-button + .form_close_pay-button,
+  .navigation_button .register-button + .form_close_pay-button,
+  .navigation_button .cta + .register-button,
+  .navigation_button #Afsluiten_button button + .register-button,
+  .navigation_button #Afsluiten_button .fd-zone .input-choose-btn + .register-button,
+  .fd-zone .navigation_button #Afsluiten_button .input-choose-btn + .register-button,
+  #Afsluiten_button .navigation_button button + .register-button,
+  #Afsluiten_button .navigation_button .fd-zone .input-choose-btn + .register-button,
+  .fd-zone #Afsluiten_button .navigation_button .input-choose-btn + .register-button,
+  .navigation_button #Klaar_button button + .register-button,
+  .navigation_button #Klaar_button .fd-zone .input-choose-btn + .register-button,
+  .fd-zone .navigation_button #Klaar_button .input-choose-btn + .register-button,
+  #Klaar_button .navigation_button button + .register-button,
+  #Klaar_button .navigation_button .fd-zone .input-choose-btn + .register-button,
+  .fd-zone #Klaar_button .navigation_button .input-choose-btn + .register-button,
+  .navigation_button #Formulieropslaan_button a + .register-button,
+  #Formulieropslaan_button .navigation_button a + .register-button,
+  .navigation_button .form_close_pay-button + .register-button,
+  .navigation_button .register-button + .register-button, .inputfield_container .multiselectbutton input + .cta, .inputfield_container .multiselectbutton #Afsluiten_button input + button, .inputfield_container .multiselectbutton #Afsluiten_button .fd-zone input + .input-choose-btn, .fd-zone .inputfield_container .multiselectbutton #Afsluiten_button input + .input-choose-btn, #Afsluiten_button .inputfield_container .multiselectbutton input + button, #Afsluiten_button .inputfield_container .multiselectbutton .fd-zone input + .input-choose-btn, .fd-zone #Afsluiten_button .inputfield_container .multiselectbutton input + .input-choose-btn,
+  .inputfield_container .multiselectbutton #Klaar_button input + button,
+  .inputfield_container .multiselectbutton #Klaar_button .fd-zone input + .input-choose-btn,
+  .fd-zone .inputfield_container .multiselectbutton #Klaar_button input + .input-choose-btn,
+  #Klaar_button .inputfield_container .multiselectbutton input + button,
+  #Klaar_button .inputfield_container .multiselectbutton .fd-zone input + .input-choose-btn,
+  .fd-zone #Klaar_button .inputfield_container .multiselectbutton input + .input-choose-btn, .inputfield_container .multiselectbutton #Formulieropslaan_button input + a, #Formulieropslaan_button .inputfield_container .multiselectbutton input + a, .inputfield_container .multiselectbutton .navigation_button input + .form_close_pay-button, .navigation_button .inputfield_container .multiselectbutton input + .form_close_pay-button,
+  .inputfield_container .multiselectbutton .navigation_button input + .register-button,
+  .navigation_button .inputfield_container .multiselectbutton input + .register-button, .inputfield_container .multiselectbutton .cta + input, .inputfield_container .multiselectbutton #Afsluiten_button button + input, .inputfield_container .multiselectbutton #Afsluiten_button .fd-zone .input-choose-btn + input, .fd-zone .inputfield_container .multiselectbutton #Afsluiten_button .input-choose-btn + input, #Afsluiten_button .inputfield_container .multiselectbutton button + input, #Afsluiten_button .inputfield_container .multiselectbutton .fd-zone .input-choose-btn + input, .fd-zone #Afsluiten_button .inputfield_container .multiselectbutton .input-choose-btn + input,
+  .inputfield_container .multiselectbutton #Klaar_button button + input,
+  .inputfield_container .multiselectbutton #Klaar_button .fd-zone .input-choose-btn + input,
+  .fd-zone .inputfield_container .multiselectbutton #Klaar_button .input-choose-btn + input,
+  #Klaar_button .inputfield_container .multiselectbutton button + input,
+  #Klaar_button .inputfield_container .multiselectbutton .fd-zone .input-choose-btn + input,
+  .fd-zone #Klaar_button .inputfield_container .multiselectbutton .input-choose-btn + input, .inputfield_container .multiselectbutton #Formulieropslaan_button a + input, #Formulieropslaan_button .inputfield_container .multiselectbutton a + input, .inputfield_container .multiselectbutton .navigation_button .form_close_pay-button + input, .navigation_button .inputfield_container .multiselectbutton .form_close_pay-button + input,
+  .inputfield_container .multiselectbutton .navigation_button .register-button + input,
+  .navigation_button .inputfield_container .multiselectbutton .register-button + input, .inputfield_container .multiselectbutton input + input {
     margin-top: .5em; }
-  .cta + p, .inputfield_container .multiselectbutton input + p, .navigation_button .form_close_pay-button + p, .navigation_button .register-button + p, #Formulieropslaan_button a + p, #Afsluiten_button button + p, #Afsluiten_button .fd-zone .input-choose-btn + p, .fd-zone #Afsluiten_button .input-choose-btn + p, #Klaar_button button + p, #Klaar_button .fd-zone .input-choose-btn + p, .fd-zone #Klaar_button .input-choose-btn + p {
+  .cta + p, .fd-zone .cta + .upload_error, #Afsluiten_button button + p, #Afsluiten_button .fd-zone button + .upload_error, .fd-zone #Afsluiten_button button + .upload_error, #Afsluiten_button .fd-zone .input-choose-btn + p, #Afsluiten_button .fd-zone .input-choose-btn + .upload_error, .fd-zone #Afsluiten_button .input-choose-btn + p, .fd-zone #Afsluiten_button .input-choose-btn + .upload_error,
+  #Klaar_button button + p,
+  #Klaar_button .fd-zone button + .upload_error,
+  .fd-zone #Klaar_button button + .upload_error,
+  #Klaar_button .fd-zone .input-choose-btn + p,
+  #Klaar_button .fd-zone .input-choose-btn + .upload_error,
+  .fd-zone #Klaar_button .input-choose-btn + p,
+  .fd-zone #Klaar_button .input-choose-btn + .upload_error, #Formulieropslaan_button a + p, #Formulieropslaan_button .fd-zone a + .upload_error, .fd-zone #Formulieropslaan_button a + .upload_error, .navigation_button .form_close_pay-button + p, .navigation_button .fd-zone .form_close_pay-button + .upload_error, .fd-zone .navigation_button .form_close_pay-button + .upload_error,
+  .navigation_button .register-button + p,
+  .navigation_button .fd-zone .register-button + .upload_error,
+  .fd-zone .navigation_button .register-button + .upload_error, .inputfield_container_error > .cta + span, #Afsluiten_button .inputfield_container_error > button + span, #Afsluiten_button .fd-zone .inputfield_container_error > .input-choose-btn + span, .fd-zone #Afsluiten_button .inputfield_container_error > .input-choose-btn + span,
+  #Klaar_button .inputfield_container_error > button + span,
+  #Klaar_button .fd-zone .inputfield_container_error > .input-choose-btn + span,
+  .fd-zone #Klaar_button .inputfield_container_error > .input-choose-btn + span, #Formulieropslaan_button .inputfield_container_error > a + span, .navigation_button .inputfield_container_error > .form_close_pay-button + span,
+  .navigation_button .inputfield_container_error > .register-button + span, .inputfield_container .multiselectbutton input + p, .inputfield_container .multiselectbutton .fd-zone input + .upload_error, .fd-zone .inputfield_container .multiselectbutton input + .upload_error, .inputfield_container .multiselectbutton .inputfield_container_error > input + span {
     margin-top: 1em; }
 
 .button.sec {
@@ -747,12 +829,12 @@ thead th:first-child {
     border-color: #3669A5;
     color: #FFFFFF; }
 
-.official, .fieldset-row .showfield_container, .default_table tbody td,
-.eform_result_table tbody td {
+.official, .default_table tbody td,
+.eform_result_table tbody td, .fieldset-row .showfield_container {
   background: url(../Images/png/bg-patroon-officieel.png);
   background-size: 1.5em; }
 
-p.error, .inputfield_container_error > span, .fd-zone .upload_error,
+p.error, .fd-zone .upload_error, .inputfield_container_error > span,
 .parsley-custom-error-message,
 .parsley-required {
   margin-top: .5em;
@@ -789,29 +871,27 @@ label {
   label.radio {
     font-weight: normal;
     padding-right: 2em; }
-  input + label,
-  div + label {
+  input + label, div + label {
     margin-top: 1.5em; }
 
-textarea,
-select, input {
+input, textarea,
+select {
   width: 100%;
   max-width: 28em;
   border: 1px solid #B3B3B3;
   border-bottom-width: 3px;
   padding: .5em .75em; }
-  textarea.error,
-  select.error, input.error, textarea.has-error,
-  select.has-error, input.has-error,
-  .has-error textarea,
-  .has-error select,
-  .has-error input {
+  input.error, .fd-zone input.upload_error, textarea.error, .fd-zone textarea.upload_error,
+  select.error,
+  .fd-zone select.upload_error, input.has-error, textarea.has-error,
+  select.has-error, .has-error input, .has-error textarea,
+  .has-error select {
     border-color: #CC0000; }
-  textarea.m,
-  select.m, input.m {
+  input.m, textarea.m,
+  select.m {
     max-width: 20em; }
-  textarea.s,
-  select.s, input.s {
+  input.s, textarea.s,
+  select.s {
     max-width: 10em; }
 
 input[type="radio"], input[type="checkbox"] {
@@ -823,9 +903,7 @@ input[type="radio"], input[type="checkbox"] {
     margin: 0;
     width: auto; }
 
-
-button,
-.fd-zone .input-choose-btn,
+button, .fd-zone .input-choose-btn,
 input[type="submit"] {
   -webkit-appearance: none;
   width: auto;
@@ -839,53 +917,50 @@ input[type="submit"] {
   font-size: .9em;
   line-height: normal;
   border: 2px solid #2A5587; }
-  fieldset button, fieldset .fd-zone .input-choose-btn, .fd-zone fieldset .input-choose-btn, fieldset
-  input[type="submit"] {
+  fieldset button, fieldset .fd-zone .input-choose-btn, .fd-zone fieldset .input-choose-btn, fieldset input[type="submit"] {
     margin-top: 2em; }
   button.sec, .fd-zone .sec.input-choose-btn,
-  input[type="submit"].sec {
+  input.sec[type="submit"] {
     border: 2px solid #2A5587;
     color: #2A5587;
     background: #FFFFFF; }
-  button.back, .fd-zone .back.input-choose-btn, button.back:hover, .fd-zone .back.input-choose-btn:hover, button.back:focus, .fd-zone .back.input-choose-btn:focus,
-  input[type="submit"].back,
-  input[type="submit"].back:hover,
-  input[type="submit"].back:focus {
+  button.back, .fd-zone .back.input-choose-btn, button.back:hover, button.back:focus,
+  input.back[type="submit"],
+  input.back[type="submit"]:hover,
+  input.back[type="submit"]:focus {
     border: 2px solid #FFFFFF;
     text-decoration: underline;
     color: #2A5587;
     background: #FFFFFF;
     padding: 1em 1em .75em; }
-  button.abort, .fd-zone .abort.input-choose-btn, button.abort:hover, .fd-zone .abort.input-choose-btn:hover, button.abort:focus, .fd-zone .abort.input-choose-btn:focus,
-  input[type="submit"].abort,
-  input[type="submit"].abort:hover,
-  input[type="submit"].abort:focus {
+  button.abort, .fd-zone .abort.input-choose-btn, button.abort:hover, button.abort:focus,
+  input.abort[type="submit"],
+  input.abort[type="submit"]:hover,
+  input.abort[type="submit"]:focus {
     border: 2px solid transparent;
     color: #2A5587;
     background: transparent;
     padding: .75em 1em; }
-  button:hover, .fd-zone .input-choose-btn:hover, button:focus, .fd-zone .input-choose-btn:focus, button.sec:hover, .fd-zone .sec.input-choose-btn:hover, button.sec:focus, .fd-zone .sec.input-choose-btn:focus,
+  button:hover, .fd-zone .input-choose-btn:hover, button:focus, .fd-zone .input-choose-btn:focus, button.sec:hover, button.sec:focus,
   input[type="submit"]:hover,
   input[type="submit"]:focus,
-  input[type="submit"].sec:hover,
-  input[type="submit"].sec:focus {
+  input.sec[type="submit"]:hover,
+  input.sec[type="submit"]:focus {
     border: 2px solid #3669A5;
     background-color: #3669A5;
     color: #FFFFFF; }
 
 .keus {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex; }
   .keus span {
     display: block;
     padding: 2em 2em 1em; }
 
-article p::-moz-selection, article h1::-moz-selection, article h2::-moz-selection, article h3::-moz-selection, article h4::-moz-selection, article h5::-moz-selection, article h6::-moz-selection, article li::-moz-selection, article em::-moz-selection, article span::-moz-selection, article strong::-moz-selection {
+article p::-moz-selection, article .fd-zone .upload_error::-moz-selection, .fd-zone article .upload_error::-moz-selection, article .inputfield_container_error > span::-moz-selection, article h1::-moz-selection, article h2::-moz-selection, article h3::-moz-selection, article h4::-moz-selection, article h5::-moz-selection, article h6::-moz-selection, article li::-moz-selection, article em::-moz-selection, article span::-moz-selection, article strong::-moz-selection {
   background-color: #FFE44D;
   /* Omdat het kan */ }
 
-article p::selection, article h1::selection, article h2::selection, article h3::selection, article h4::selection, article h5::selection, article h6::selection, article li::selection, article em::selection, article span::selection, article strong::selection {
+article p::selection, article .fd-zone .upload_error::selection, .fd-zone article .upload_error::selection, article .inputfield_container_error > span::selection, article h1::selection, article h2::selection, article h3::selection, article h4::selection, article h5::selection, article h6::selection, article li::selection, article em::selection, article span::selection, article strong::selection {
   background-color: #FFE44D;
   /* Omdat het kan */ }
 
@@ -1034,13 +1109,27 @@ ul.linklijst,
       .linklijst ul li a:hover {
         text-decoration: underline; }
 
-.subnav .upper, .account .upper, .subnav .results-type, .account .results-type, .subnav .login-wrap h2, .login-wrap .subnav h2, .account .login-wrap h2, .login-wrap .account h2, .subnav #popup_cancel, .account #popup_cancel, .subnav .navigation_button .previous-button, .navigation_button .subnav .previous-button, .account .navigation_button .previous-button, .navigation_button .account .previous-button, .subnav #Stoppen_button a, #Stoppen_button .subnav a, .account #Stoppen_button a, #Stoppen_button .account a,
-.subnav #Annuleren_button button, #Annuleren_button .subnav button,
-.account #Annuleren_button button, #Annuleren_button .account button, .subnav #Annuleren_button .fd-zone .input-choose-btn, #Annuleren_button .fd-zone .subnav .input-choose-btn, .account #Annuleren_button .fd-zone .input-choose-btn, #Annuleren_button .fd-zone .account .input-choose-btn, .subnav .fd-zone #Annuleren_button .input-choose-btn, .fd-zone #Annuleren_button .subnav .input-choose-btn, .account .fd-zone #Annuleren_button .input-choose-btn, .fd-zone #Annuleren_button .account .input-choose-btn,
-.subnav .navigation_button .form_cancel-button, .navigation_button .subnav .form_cancel-button,
-.account .navigation_button .form_cancel-button, .navigation_button .account .form_cancel-button, .subnav .eform_result_heading, .account .eform_result_heading,
-.subnav form h3, form .subnav h3,
-.account form h3, form .account h3 {
+.subnav .upper, .subnav .eform_result_heading,
+.subnav form h3,
+form .subnav h3, .subnav #Stoppen_button a, #Stoppen_button .subnav a,
+.subnav #Annuleren_button button,
+.subnav #Annuleren_button .fd-zone .input-choose-btn,
+.fd-zone .subnav #Annuleren_button .input-choose-btn,
+#Annuleren_button .subnav button,
+#Annuleren_button .subnav .fd-zone .input-choose-btn,
+.fd-zone #Annuleren_button .subnav .input-choose-btn,
+.subnav .navigation_button .form_cancel-button,
+.navigation_button .subnav .form_cancel-button, .subnav .navigation_button .previous-button, .navigation_button .subnav .previous-button, .subnav #popup_cancel, .subnav .login-wrap h2, .login-wrap .subnav h2, .account .upper, .account .eform_result_heading,
+.account form h3,
+form .account h3, .account #Stoppen_button a, #Stoppen_button .account a,
+.account #Annuleren_button button,
+.account #Annuleren_button .fd-zone .input-choose-btn,
+.fd-zone .account #Annuleren_button .input-choose-btn,
+#Annuleren_button .account button,
+#Annuleren_button .account .fd-zone .input-choose-btn,
+.fd-zone #Annuleren_button .account .input-choose-btn,
+.account .navigation_button .form_cancel-button,
+.navigation_button .account .form_cancel-button, .account .navigation_button .previous-button, .navigation_button .account .previous-button, .account #popup_cancel, .account .login-wrap h2, .login-wrap .account h2, .subnav .results-type, .account .results-type {
   margin-top: 0; }
 
 .subnav .linklijst, .account .linklijst {
@@ -1048,10 +1137,17 @@ ul.linklijst,
   border-bottom: 2px solid #F2F2F2;
   padding: .75em 0; }
 
-.sisternav .upper, .sisternav .results-type, .sisternav .login-wrap h2, .login-wrap .sisternav h2, .sisternav #popup_cancel, .sisternav .navigation_button .previous-button, .navigation_button .sisternav .previous-button, .sisternav #Stoppen_button a, #Stoppen_button .sisternav a,
-.sisternav #Annuleren_button button, #Annuleren_button .sisternav button, .sisternav #Annuleren_button .fd-zone .input-choose-btn, #Annuleren_button .fd-zone .sisternav .input-choose-btn, .sisternav .fd-zone #Annuleren_button .input-choose-btn, .fd-zone #Annuleren_button .sisternav .input-choose-btn,
-.sisternav .navigation_button .form_cancel-button, .navigation_button .sisternav .form_cancel-button, .sisternav .eform_result_heading,
-.sisternav form h3, form .sisternav h3 {
+.sisternav .upper, .sisternav .eform_result_heading,
+.sisternav form h3,
+form .sisternav h3, .sisternav #Stoppen_button a, #Stoppen_button .sisternav a,
+.sisternav #Annuleren_button button,
+.sisternav #Annuleren_button .fd-zone .input-choose-btn,
+.fd-zone .sisternav #Annuleren_button .input-choose-btn,
+#Annuleren_button .sisternav button,
+#Annuleren_button .sisternav .fd-zone .input-choose-btn,
+.fd-zone #Annuleren_button .sisternav .input-choose-btn,
+.sisternav .navigation_button .form_cancel-button,
+.navigation_button .sisternav .form_cancel-button, .sisternav .navigation_button .previous-button, .navigation_button .sisternav .previous-button, .sisternav #popup_cancel, .sisternav .login-wrap h2, .login-wrap .sisternav h2, .sisternav .results-type {
   margin-top: 0;
   color: #333333; }
 
@@ -1107,7 +1203,6 @@ ul.linklijst,
       .news.spotlight h3 a {
         text-decoration: none;
         text-shadow: 0.1em 0.06em 0 white,-0.1em 0.06em 0 white,0.1em 0 0 white,-0.1em 0 0 white;
-        -webkit-box-shadow: inset 0 -2px 0 #2A5587;
         box-shadow: inset 0 -2px 0 #2A5587;
         text-rendering: optimizeLegibility; }
     .news.spotlight ul:after {
@@ -1121,7 +1216,7 @@ ul.linklijst,
     margin: 0 -1.2em 2em; }
   .news li {
     padding: 0 1.2em; }
-    .news li p {
+    .news li p, .news li .fd-zone .upload_error, .fd-zone .news li .upload_error, .news li .inputfield_container_error > span {
       margin: 0; }
   .news .button {
     text-align: center;
@@ -1190,15 +1285,17 @@ article .contact {
     margin: 0; }
     article .contact li em {
       display: block; }
-    article .contact li p {
+    article .contact li p, article .contact li .fd-zone .upload_error, .fd-zone article .contact li .upload_error, article .contact li .inputfield_container_error > span {
       margin: 0; }
     article .contact li a {
       color: #1D1D1C; }
-      article .contact li a.cta, article .contact li .navigation_button a.form_close_pay-button, .navigation_button article .contact li a.form_close_pay-button,
-      article .contact li .navigation_button a.register-button, .navigation_button article .contact li a.register-button, article .contact li #Formulieropslaan_button a, #Formulieropslaan_button article .contact li a {
+      article .contact li a.cta, article .contact li #Formulieropslaan_button a, #Formulieropslaan_button article .contact li a, article .contact li .navigation_button a.form_close_pay-button, .navigation_button article .contact li a.form_close_pay-button,
+      article .contact li .navigation_button a.register-button,
+      .navigation_button article .contact li a.register-button {
         margin: 1em 0; }
-        article .contact li a.cta:not(.sec), article .contact li .navigation_button a.form_close_pay-button:not(.sec), .navigation_button article .contact li a.form_close_pay-button:not(.sec),
-        article .contact li .navigation_button a.register-button:not(.sec), .navigation_button article .contact li a.register-button:not(.sec), article .contact li #Formulieropslaan_button a:not(.sec), #Formulieropslaan_button article .contact li a:not(.sec) {
+        article .contact li a.cta:not(.sec), article .contact li #Formulieropslaan_button a:not(.sec), #Formulieropslaan_button article .contact li a:not(.sec), article .contact li .navigation_button a.form_close_pay-button:not(.sec), .navigation_button article .contact li a.form_close_pay-button:not(.sec),
+        article .contact li .navigation_button a.register-button:not(.sec),
+        .navigation_button article .contact li a.register-button:not(.sec) {
           color: #FFFFFF; }
       article .contact li a.arrow {
         background-image: url(../Images/png/pijltje-zwart.png);
@@ -1289,7 +1386,10 @@ footer {
   footer a,
   footer a:hover,
   footer a:focus,
-  footer p {
+  footer p,
+  footer .fd-zone .upload_error,
+  .fd-zone footer .upload_error,
+  footer .inputfield_container_error > span {
     color: #FFFFFF; }
   footer em {
     display: block;
@@ -1469,8 +1569,7 @@ article .contact {
   article .contact .grid-wrap {
     padding: .25em 3em; }
 
-.pipette .kader,
-.stadspromotie .kader {
+.pipette .kader, .stadspromotie .kader {
   width: 50%;
   position: absolute;
   right: 0;
@@ -1561,22 +1660,21 @@ article .page-heading,
 article .bodycopy {
   width: 66.67%;
   float: left; }
-  .popup article .page-heading, .popup
-  article .bodycopy {
+  .popup article .page-heading, .popup article .bodycopy {
     width: 100%; }
 
-article .subnav, article .account,
+article .subnav,
 article .account {
   width: 33.3%;
   float: right;
   margin-top: 3em; }
 
-article .subnav .linklijst, article .account .linklijst,
+article .subnav .linklijst,
 article .account .linklijst,
 article .sisternav .linklijst {
   margin-right: -2.4em;
   padding-right: 2.4em; }
-  article .subnav .linklijst ul, article .account .linklijst ul,
+  article .subnav .linklijst ul,
   article .account .linklijst ul,
   article .sisternav .linklijst ul {
     width: 100%;
@@ -1641,18 +1739,31 @@ article .contact {
   float: left;
   margin: 0;
   padding: 0 1.2em; }
-  article .contact .upper, article .contact .results-type, article .contact .login-wrap h2, .login-wrap article .contact h2, article .contact #popup_cancel, article .contact .navigation_button .previous-button, .navigation_button article .contact .previous-button, article .contact #Stoppen_button a, #Stoppen_button article .contact a,
-  article .contact #Annuleren_button button, #Annuleren_button article .contact button, article .contact #Annuleren_button .fd-zone .input-choose-btn, #Annuleren_button .fd-zone article .contact .input-choose-btn, article .contact .fd-zone #Annuleren_button .input-choose-btn, .fd-zone #Annuleren_button article .contact .input-choose-btn,
-  article .contact .navigation_button .form_cancel-button, .navigation_button article .contact .form_cancel-button, article .contact .eform_result_heading,
-  article .contact form h3, form article .contact h3 {
+  article .contact .upper, article .contact .eform_result_heading,
+  article .contact form h3,
+  form article .contact h3, article .contact #Stoppen_button a, #Stoppen_button article .contact a,
+  article .contact #Annuleren_button button,
+  article .contact #Annuleren_button .fd-zone .input-choose-btn,
+  .fd-zone article .contact #Annuleren_button .input-choose-btn,
+  #Annuleren_button article .contact button,
+  #Annuleren_button article .contact .fd-zone .input-choose-btn,
+  .fd-zone #Annuleren_button article .contact .input-choose-btn,
+  article .contact .navigation_button .form_cancel-button,
+  .navigation_button article .contact .form_cancel-button, article .contact .navigation_button .previous-button, .navigation_button article .contact .previous-button, article .contact #popup_cancel, article .contact .login-wrap h2, .login-wrap article .contact h2, article .contact .results-type {
     margin-top: 0;
     padding-top: 1.5em; }
   article .contact .grid-wrap {
     min-height: 21.2em;
     padding: 0 0.8em; }
-  article .contact .cta, article .contact .inputfield_container .multiselectbutton input, .inputfield_container .multiselectbutton article .contact input, article .contact .navigation_button .form_close_pay-button, .navigation_button article .contact .form_close_pay-button,
-  article .contact .navigation_button .register-button, .navigation_button article .contact .register-button, article .contact #Formulieropslaan_button a, #Formulieropslaan_button article .contact a, article .contact #Afsluiten_button button, #Afsluiten_button article .contact button, article .contact #Afsluiten_button .fd-zone .input-choose-btn, #Afsluiten_button .fd-zone article .contact .input-choose-btn, article .contact .fd-zone #Afsluiten_button .input-choose-btn, .fd-zone #Afsluiten_button article .contact .input-choose-btn,
-  article .contact #Klaar_button button, #Klaar_button article .contact button, article .contact #Klaar_button .fd-zone .input-choose-btn, #Klaar_button .fd-zone article .contact .input-choose-btn, article .contact .fd-zone #Klaar_button .input-choose-btn, .fd-zone #Klaar_button article .contact .input-choose-btn {
+  article .contact .cta, article .contact #Afsluiten_button button, article .contact #Afsluiten_button .fd-zone .input-choose-btn, .fd-zone article .contact #Afsluiten_button .input-choose-btn, #Afsluiten_button article .contact button, #Afsluiten_button article .contact .fd-zone .input-choose-btn, .fd-zone #Afsluiten_button article .contact .input-choose-btn,
+  article .contact #Klaar_button button,
+  article .contact #Klaar_button .fd-zone .input-choose-btn,
+  .fd-zone article .contact #Klaar_button .input-choose-btn,
+  #Klaar_button article .contact button,
+  #Klaar_button article .contact .fd-zone .input-choose-btn,
+  .fd-zone #Klaar_button article .contact .input-choose-btn, article .contact #Formulieropslaan_button a, #Formulieropslaan_button article .contact a, article .contact .navigation_button .form_close_pay-button, .navigation_button article .contact .form_close_pay-button,
+  article .contact .navigation_button .register-button,
+  .navigation_button article .contact .register-button, article .contact .inputfield_container .multiselectbutton input, .inputfield_container .multiselectbutton article .contact input {
     position: relative;
     top: auto;
     right: auto; }
@@ -1729,8 +1840,6 @@ nav {
     display: flex;
     -ms-justify-content: space-between;
     -webkit-justify-content: space-between;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
     justify-content: space-between;
     margin: 0; }
   nav li {
@@ -1750,8 +1859,6 @@ nav {
       color: #FFFFFF;
       font-size: 1em;
       text-decoration: none;
-      -webkit-transition: background-color 0.25s ease;
-      -o-transition: background-color 0.25s ease;
       transition: background-color 0.25s ease; }
       nav li a.selected, nav li a:hover, nav li a:focus {
         background: #000000;
@@ -1827,9 +1934,9 @@ html.ie10 #search input[type="text"] {
  *  Include template subcomponents, like paginator etcetera
  *
  */
-.tx-pagebrowse-page a, .tx-pagebrowse-ellipsis span, .tx-pagebrowse-prev a,
-.tx-pagebrowse-next a, .tx-pagebrowse-current, .ui-datepicker-prev,
-.ui-datepicker-next {
+.ui-datepicker-prev,
+.ui-datepicker-next, .tx-pagebrowse-current, .tx-pagebrowse-prev a,
+.tx-pagebrowse-next a, .tx-pagebrowse-ellipsis span, .tx-pagebrowse-page a {
   display: inline-block;
   position: relative;
   padding: .5em;
@@ -1913,8 +2020,6 @@ html.ie10 #search input[type="text"] {
 .tx-pagebrowse-prev a {
   padding: .5em 1em .5em 2em; }
   .tx-pagebrowse-prev a:after {
-    -webkit-transform: rotateZ(180deg);
-    -ms-transform: rotate(180deg);
     transform: rotateZ(180deg);
     right: auto;
     left: .75em;
@@ -1936,19 +2041,19 @@ html.ie10 #search input[type="text"] {
   padding: 0;
   border: 0; }
 
-#tx-solr-sorting-outer, #tx-solr-search-functions {
+#tx-solr-search-functions, #tx-solr-sorting-outer {
   width: 50%;
   float: left;
   margin-top: 2em;
   width: 33.3%; }
 
-.tx-solr-sorting, #tx-solr-facets-available {
+#tx-solr-facets-available, .tx-solr-sorting {
   border-top: 2px solid #F2F2F2;
   border-bottom: 2px solid #F2F2F2;
   margin-right: -2.4em;
   padding-right: 2.4em; }
 
-.tx-solr-sorting span, #tx-solr-search-functions h2 {
+#tx-solr-search-functions h2, .tx-solr-sorting span {
   display: block;
   margin: 1em 0 0.4em;
   letter-spacing: 0.04em;
@@ -2081,7 +2186,7 @@ html.ie10 #search input[type="text"] {
   padding: 0 2em;
   padding: 0 3em;
   padding: 0 3em 0 4em; }
-  .cookie-notice p {
+  .cookie-notice p, .cookie-notice .fd-zone .upload_error, .fd-zone .cookie-notice .upload_error, .cookie-notice .inputfield_container_error > span {
     position: relative;
     margin: 0;
     padding: 0.6em 4em 0.8em 0; }
@@ -2094,6 +2199,22 @@ html.ie10 #search input[type="text"] {
     text-decoration: none;
     font-size: 1.5em;
     font-weight: bold; }
+
+.bottomlinks {
+  clear: both; }
+
+.reactie {
+  padding: 0 1.2em;
+  margin-top: 4em;
+  margin-bottom: -3.6em; }
+  .reactie a {
+    background: url(../Images/png/pijltje-rood.png) 0 0.15em no-repeat;
+    color: #CC0000;
+    padding-left: 1em;
+    font-weight: bold;
+    text-decoration: none; }
+    .reactie a:hover {
+      text-decoration: underline; }
 
 .csc-linkToTop {
   clear: both;
@@ -2125,7 +2246,6 @@ html.ie10 #search input[type="text"] {
       top: -1.5em;
       background: url(../Images/png/pijltje-rood.png) 0 0.25em no-repeat;
       -webkit-transform: rotateZ(-90deg);
-      -ms-transform: rotate(-90deg);
       transform: rotateZ(-90deg); }
 
 .csc-linkToTop a:after {
@@ -2158,9 +2278,7 @@ html.ie10 #search input[type="text"] {
   .image-center .image-wrap figcaption {
     text-align: left; }
 
-.image-left .image-wrap,
-.image-intext-left .image-wrap,
-.image-beside-left .image-wrap {
+.image-left .image-wrap, .image-intext-left .image-wrap, .image-beside-left .image-wrap {
   float: left; }
 
 .image-intext-left .image-wrap figure {
@@ -2169,13 +2287,9 @@ html.ie10 #search input[type="text"] {
 .image-beside-left .image-wrap figure {
   margin-right: 1.2em; }
 
-.image-right .image-wrap,
-.image-intext-right .image-wrap,
-.image-beside-right .image-wrap {
+.image-right .image-wrap, .image-intext-right .image-wrap, .image-beside-right .image-wrap {
   float: right; }
-  .image-right .image-wrap figcaption,
-  .image-intext-right .image-wrap figcaption,
-  .image-beside-right .image-wrap figcaption {
+  .image-right .image-wrap figcaption, .image-intext-right .image-wrap figcaption, .image-beside-right .image-wrap figcaption {
     text-align: left; }
 
 .image-intext-right .image-wrap figure {
@@ -2202,8 +2316,7 @@ html.ie10 #search input[type="text"] {
   .image-beside h3:first-child {
     margin-top: 0; }
 
-.image-left .text,
-.image-right .text {
+.image-left .text, .image-right .text {
   clear: both; }
 
 .image-beside .text {
@@ -2284,20 +2397,14 @@ html.ie10 #search input[type="text"] {
     #toptaken ul li:nth-child(5n) {
       margin-right: 0; }
 
-.home .toptaken:after, .home
-#toptaken:after {
+.home .toptaken:after, .home #toptaken:after {
   display: none; }
 
-.home .toptaken ul, .home
-#toptaken ul {
+.home .toptaken ul, .home #toptaken ul {
   width: 66.67%;
   float: left; }
 
-.home .toptaken ul li,
-.bodycopy .toptaken ul li, .home
-#toptaken ul li,
-.bodycopy
-#toptaken ul li {
+.home .toptaken ul li, .bodycopy .toptaken ul li, .home #toptaken ul li, .bodycopy #toptaken ul li {
   background-image: none;
   padding-left: 0;
   width: 49%;
@@ -2306,38 +2413,20 @@ html.ie10 #search input[type="text"] {
   margin-right: 2%;
   margin-bottom: .8em;
   margin-right: 2%; }
-  .home .toptaken ul li:nth-child(2n),
-  .bodycopy .toptaken ul li:nth-child(2n), .home
-  #toptaken ul li:nth-child(2n),
-  .bodycopy
-  #toptaken ul li:nth-child(2n) {
+  .home .toptaken ul li:nth-child(2n), .bodycopy .toptaken ul li:nth-child(2n), .home #toptaken ul li:nth-child(2n), .bodycopy #toptaken ul li:nth-child(2n) {
     margin-right: 0;
     margin-right: 2%; }
-  .home .toptaken ul li:nth-child(3n),
-  .bodycopy .toptaken ul li:nth-child(3n), .home
-  #toptaken ul li:nth-child(3n),
-  .bodycopy
-  #toptaken ul li:nth-child(3n) {
+  .home .toptaken ul li:nth-child(3n), .bodycopy .toptaken ul li:nth-child(3n), .home #toptaken ul li:nth-child(3n), .bodycopy #toptaken ul li:nth-child(3n) {
     margin-right: 0; }
-  .home .toptaken ul li:nth-child(5n),
-  .bodycopy .toptaken ul li:nth-child(5n), .home
-  #toptaken ul li:nth-child(5n),
-  .bodycopy
-  #toptaken ul li:nth-child(5n) {
+  .home .toptaken ul li:nth-child(5n), .bodycopy .toptaken ul li:nth-child(5n), .home #toptaken ul li:nth-child(5n), .bodycopy #toptaken ul li:nth-child(5n) {
     margin-right: 2%; }
 
-.home .toptaken a,
-.bodycopy .toptaken a, .home
-#toptaken a,
-.bodycopy
-#toptaken a {
+.home .toptaken a, .bodycopy .toptaken a, .home #toptaken a, .bodycopy #toptaken a {
   min-height: 10.2em; }
 
-.bodycopy .toptaken, .bodycopy
-#toptaken {
+.bodycopy .toptaken, .bodycopy #toptaken {
   margin: 0 -1.2em; }
-  .bodycopy .toptaken li:nth-child(3n), .bodycopy
-  #toptaken li:nth-child(3n) {
+  .bodycopy .toptaken li:nth-child(3n), .bodycopy #toptaken li:nth-child(3n) {
     margin-right: 2%;
     margin-right: 0; }
 
@@ -2357,8 +2446,6 @@ html.ie10 #search input[type="text"] {
   #toptaken a:focus {
     background-color: #3669A5;
     border-color: #3669A5;
-    -webkit-transform: scale(1.02);
-    -ms-transform: scale(1.02);
     transform: scale(1.02); }
   .toptaken a span,
   #toptaken a span {
@@ -2387,8 +2474,6 @@ html.ie10 #search input[type="text"] {
   min-height: 10em; }
   .toptaken.sec a:hover, .toptaken.sec a:focus {
     background-color: #FFFFFF;
-    -webkit-transform: scale(1.02);
-    -ms-transform: scale(1.02);
     transform: scale(1.02); }
 
 .toptaken.sec img {
@@ -2464,29 +2549,35 @@ html.ie10 #search input[type="text"] {
   padding-top: 0.5em; }
   .login-wrap h2 {
     font-size: 1em; }
-  .login-wrap p {
+  .login-wrap p, .login-wrap .fd-zone .upload_error, .fd-zone .login-wrap .upload_error, .login-wrap .inputfield_container_error > span {
     min-height: 3em;
     margin: 0; }
-    .login-wrap p.digid {
+    .login-wrap p.digid, .login-wrap .fd-zone .digid.upload_error, .fd-zone .login-wrap .digid.upload_error, .login-wrap .inputfield_container_error > span.digid {
       background: url(../Images/png/logo-digid.png) 0 0 no-repeat;
       background-size: 3em; }
-    .login-wrap p.eherkenning {
+    .login-wrap p.eherkenning, .login-wrap .fd-zone .eherkenning.upload_error, .fd-zone .login-wrap .eherkenning.upload_error, .login-wrap .inputfield_container_error > span.eherkenning {
       background: url(../Images/png/logo-eherkenning.png) 0 0 no-repeat;
       background-size: 3em; }
-    .login-wrap p.eidas {
+    .login-wrap p.eidas, .login-wrap .fd-zone .eidas.upload_error, .fd-zone .login-wrap .eidas.upload_error, .login-wrap .inputfield_container_error > span.eidas {
       background: url(../Images/png/logo-eidas.png) 0 0 no-repeat;
       background-size: 3em; }
-    .login-wrap p.logout, .login-wrap p.login {
+    .login-wrap p.logout, .login-wrap .fd-zone .logout.upload_error, .fd-zone .login-wrap .logout.upload_error, .login-wrap .inputfield_container_error > span.logout, .login-wrap p.login, .login-wrap .fd-zone .login.upload_error, .fd-zone .login-wrap .login.upload_error, .login-wrap .inputfield_container_error > span.login {
       padding-left: 3.6em; }
-  .login-wrap .logout + p {
+  .login-wrap .logout + p, .login-wrap .fd-zone .logout + .upload_error, .fd-zone .login-wrap .logout + .upload_error, .login-wrap .inputfield_container_error > .logout + span {
     margin-top: 1em; }
   .login-wrap .box {
     margin: 1em 0; }
   .login-wrap .box + .box {
     margin-top: -0.5em; }
-  .login-wrap .cta, .login-wrap .inputfield_container .multiselectbutton input, .inputfield_container .multiselectbutton .login-wrap input, .login-wrap .navigation_button .form_close_pay-button, .navigation_button .login-wrap .form_close_pay-button,
-  .login-wrap .navigation_button .register-button, .navigation_button .login-wrap .register-button, .login-wrap #Formulieropslaan_button a, #Formulieropslaan_button .login-wrap a, .login-wrap #Afsluiten_button button, #Afsluiten_button .login-wrap button, .login-wrap #Afsluiten_button .fd-zone .input-choose-btn, #Afsluiten_button .fd-zone .login-wrap .input-choose-btn, .login-wrap .fd-zone #Afsluiten_button .input-choose-btn, .fd-zone #Afsluiten_button .login-wrap .input-choose-btn,
-  .login-wrap #Klaar_button button, #Klaar_button .login-wrap button, .login-wrap #Klaar_button .fd-zone .input-choose-btn, #Klaar_button .fd-zone .login-wrap .input-choose-btn, .login-wrap .fd-zone #Klaar_button .input-choose-btn, .fd-zone #Klaar_button .login-wrap .input-choose-btn {
+  .login-wrap .cta, .login-wrap #Afsluiten_button button, .login-wrap #Afsluiten_button .fd-zone .input-choose-btn, .fd-zone .login-wrap #Afsluiten_button .input-choose-btn, #Afsluiten_button .login-wrap button, #Afsluiten_button .login-wrap .fd-zone .input-choose-btn, .fd-zone #Afsluiten_button .login-wrap .input-choose-btn,
+  .login-wrap #Klaar_button button,
+  .login-wrap #Klaar_button .fd-zone .input-choose-btn,
+  .fd-zone .login-wrap #Klaar_button .input-choose-btn,
+  #Klaar_button .login-wrap button,
+  #Klaar_button .login-wrap .fd-zone .input-choose-btn,
+  .fd-zone #Klaar_button .login-wrap .input-choose-btn, .login-wrap #Formulieropslaan_button a, #Formulieropslaan_button .login-wrap a, .login-wrap .navigation_button .form_close_pay-button, .navigation_button .login-wrap .form_close_pay-button,
+  .login-wrap .navigation_button .register-button,
+  .navigation_button .login-wrap .register-button, .login-wrap .inputfield_container .multiselectbutton input, .inputfield_container .multiselectbutton .login-wrap input {
     margin: 0;
     padding: 0.5em 2.2em 0.5em 0.889em;
     background-position: right 1em top 0.9em; }
@@ -2583,8 +2674,6 @@ html.ie10 #search input[type="text"] {
 .ui-datepicker-prev {
   float: left; }
   .ui-datepicker-prev:after {
-    -webkit-transform: rotateZ(180deg);
-    -ms-transform: rotate(180deg);
     transform: rotateZ(180deg);
     right: auto;
     left: .45em;
@@ -2978,25 +3067,20 @@ strong.official, .fieldset-row strong.showfield_container {
 .formsteps {
   display: -ms-flexbox;
   display: -webkit-flex;
-  display: -webkit-box;
   display: flex;
   -ms-flex-pack: justify;
   -webkit-justify-content: space-between;
-  -webkit-box-pack: justify;
   justify-content: space-between;
   padding: 3em 0 0;
   position: relative; }
   .formsteps > span {
     -ms-flex: 0 1 auto;
     -webkit-flex: 0 1 auto;
-    -webkit-box-flex: 0;
     flex: 0 1 auto;
     display: block;
     height: 2em;
     margin: 0;
     padding: .25em 0;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     position: relative; }
   .formsteps strong {
@@ -3396,8 +3480,6 @@ textarea[id$="_hi_200"] {
   .confirmation .overlay {
     background-color: rgba(255, 255, 255, 0.66);
     z-index: 30;
-    -webkit-transition: left 0.4s ease-in;
-    -o-transition: left 0.4s ease-in;
     transition: left 0.4s ease-in; }
   .confirmation.submitok .overlay {
     left: 100%; }
@@ -3502,7 +3584,7 @@ nav li a {
   .browsehappy .grid-wrap {
     border-left: 1px solid #D94E51;
     border-right: 1px solid #D94E51; }
-  .browsehappy p,
+  .browsehappy p, .browsehappy .inputfield_container_error > span, .browsehappy .fd-zone .upload_error, .fd-zone .browsehappy .upload_error,
   .browsehappy a {
     margin: 0;
     padding: 1em 0;
