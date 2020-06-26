@@ -3522,7 +3522,7 @@ button.ExxTooltip, .fd-zone .ExxTooltip.input-choose-btn {
       background-color: #2A5587;
       font-size: 0.8em;
       text-align: center; } }
-#inputfield_help_offscreen {
+#inputfield_help_offscreen, .inputfield_help_offscreen {
   display: inline-block !important;
   width: 1px;
   height: 1px;

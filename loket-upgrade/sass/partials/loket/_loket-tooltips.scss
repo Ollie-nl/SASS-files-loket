@@ -91,7 +91,6 @@ button.ExxTooltip
 	}
 }
 
-
-#inputfield_help_offscreen{
+#inputfield_help_offscreen, .inputfield_help_offscreen{
  	@include assistive;
 }
