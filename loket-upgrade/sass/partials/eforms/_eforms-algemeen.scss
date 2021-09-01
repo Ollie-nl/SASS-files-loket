@@ -33,9 +33,6 @@ fieldset
 	}
 }
 
-
-
-
 // Style registered information block (e.g. license registration info) as official info.
 // The occurrence of both dashes and underscores is due to exxellence code (yup, that's my thought exactly).
 .fieldset-row
@@ -203,7 +200,7 @@ fieldset
 {
 	> span
 	{
-		@extend p.error;
+		@extend p, .error;
 		
 		clear: left;
 		padding-bottom: 0.2em; // Extra ruimte voor puntje van icoon.

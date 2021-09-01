@@ -26,21 +26,37 @@ article
 }
 
 
-
-
 #main .container
 {
-	padding: 0 1.8em;
+	padding: 5.2em 1.8em;
 	background-position: 1em 0;
+
 }
 
 header .grid-wrap {
-	padding: 1.25em 2.4em 1em 2em;  
+	padding: 1.8em 2.4em 1em 2em;  
 }
 
 footer
 {
 	padding: 1em 1.8em 1.8em;
+}
+
+
+//nav
+
+nav.mainMenu{
+	display: block;
+	width: 100%;
+	background-color:$donkergrijs;
+
+	ul{
+		height: 3.35em;
+	}
+
+	li{
+		height: 3.35em;
+	}
 }
 
 // .subnav .linklijst, // Excluded for now, see what happens on dev/acc?!
@@ -100,9 +116,6 @@ footer
 		margin: 0;		
 	}
 }
-
-
-
 
 
 //  ALERT MESSAGE

@@ -59,7 +59,7 @@
 	}
 	.upload_error
 	{
-		@extend p.error;
+		@extend p, .error;
 	}
 	.note
 	{
