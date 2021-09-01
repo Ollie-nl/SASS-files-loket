@@ -1806,28 +1806,16 @@ footer .social .instagram {
   }
 
   #main .container {
-    padding: 5.2em 1.8em;
+    padding: 0 1.8em;
     background-position: 1em 0;
   }
 
   header .grid-wrap {
-    padding: 1.8em 2.4em 1em 2em;
+    padding: 1.25em 2.4em 1em 2em;
   }
 
   footer {
     padding: 1em 1.8em 1.8em;
-  }
-
-  nav.mainMenu {
-    display: block;
-    width: 100%;
-    background-color: #333333;
-  }
-  nav.mainMenu ul {
-    height: 3.35em;
-  }
-  nav.mainMenu li {
-    height: 3.35em;
   }
 
   .bodycopy .grid-wrap > div,
@@ -2038,12 +2026,28 @@ footer .social .instagram {
     z-index: 1337;
   }
 
+  header .grid-wrap {
+    padding: 1.8em 2.4em 1.25em 2em;
+  }
+
+  nav.mainMenu {
+    display: block;
+    width: 100%;
+    background-color: #333333;
+  }
+  nav.mainMenu ul {
+    height: 3.35em;
+  }
+  nav.mainMenu li {
+    height: 3.35em;
+  }
+
   #main {
     position: relative;
     z-index: 10;
   }
   #main .container {
-    padding: 0 1.2em 2em 0.8em;
+    padding: 5.2em 1.8em;
   }
 
   .container {
