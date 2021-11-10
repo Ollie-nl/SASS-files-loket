@@ -1640,6 +1640,7 @@ footer .social .instagram {
     background-color: #CC0000;
     height: 100%;
     width: 100%;
+    overflow-y: auto;
   }
   .touch-js .container {
     margin-right: -1em;
@@ -2046,7 +2047,7 @@ footer .social .instagram {
     padding: 0 1.2em 2em 0.8em;
   }
   #main .containerTop {
-    padding-block-start: 5.2em !important;
+    padding-block-start: 5.3em !important;
   }
 
   .container {
