@@ -60,14 +60,14 @@ nav.mainMenu{
 	position: relative;
 	z-index: 10;
  
- .containerTop
+  .container
 	{
-		padding: 5.2em 1.8em;
+		padding: 0 1.2em 2em 0.8em;
 	}
 
- .container
+ .containerTop
 	{
-		padding: 0em 1.8em;
+		padding-block-start: 5.2em !important; 
 	}
 }
 
