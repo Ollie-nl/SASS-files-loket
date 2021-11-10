@@ -11,14 +11,11 @@ $image-ext : ".png";            // ONLY FOR DEVELOPMENT, EXTENSION FOR LIVE IS D
 //  RESET AND NORMALIZE IE LEGACY STYLING
 @import "partials/normalize-ie";
 
-
 //  ICONS
 @import "partials/icons";
 
-
 //  SET UP BASE DESIGN
 @import "partials/base";
-
 
 //  FOR LEGACY IE, IMPORT SUBSET OF CSS WITHOUT MEDIA QUERIES
 @import "partials/tweakpoint-1";
