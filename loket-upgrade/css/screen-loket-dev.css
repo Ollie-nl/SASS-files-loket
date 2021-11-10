@@ -2011,11 +2011,11 @@ footer .social .instagram {
 
   header {
     margin: 0 -2em;
-    padding: 3.5em 2em 0;
-    background: url(../Images/svg/bg-menu.svg) repeat-x;
+    padding: 0 2em 0;
+    background: none;
   }
   header .grid-wrap {
-    padding: 1.75em 2.4em 1.25em 2em;
+    padding: 1.8em 2.4em 1em 2em;
   }
 
   #wapen {
@@ -2024,10 +2024,6 @@ footer .social .instagram {
 
   a#wapen {
     z-index: 1337;
-  }
-
-  header .grid-wrap {
-    padding: 1.8em 2.4em 1.25em 2em;
   }
 
   nav.mainMenu {
@@ -2046,8 +2042,11 @@ footer .social .instagram {
     position: relative;
     z-index: 10;
   }
-  #main .container {
+  #main .containerTop {
     padding: 5.2em 1.8em;
+  }
+  #main .container {
+    padding: 0em 1.8em;
   }
 
   .container {
@@ -2367,7 +2366,7 @@ article .contact .dataTables_filter label,
     right: 0;
     width: 6.6em;
     margin: 0;
-    padding: 0.7em 0;
+    padding: 0.9em 0;
     border: 1px solid #CC0000;
     background: #CC0000;
     color: #FFFFFF;
@@ -3964,7 +3963,7 @@ div.bodycopy .tx-pagebrowse-current {
   right: 0;
   width: 6.6em;
   margin: 0;
-  padding: 0.7em 0;
+  padding: 0.9em 0;
   border: 1px solid #CC0000;
   background: #CC0000;
   color: #FFFFFF;

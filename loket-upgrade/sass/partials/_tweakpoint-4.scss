@@ -20,12 +20,12 @@ body
 header
 {
 	margin: 0 -2em;
-	padding: 3.5em 2em 0;
-	background: url($menubalk) repeat-x;
+	padding: 0 2em 0;
+	background: none;
 		
 	.grid-wrap
 	{
-		padding: 1.75em 2.4em 1.25em 2em;
+		padding: 1.8em 2.4em 1em 2em;
 	}
 }
 
@@ -38,10 +38,6 @@ a#wapen
 	z-index: 1337;
 }
 
-
-header .grid-wrap {
-	padding: 1.8em 2.4em 1.25em 2em;  
-}
 	
 //nav
 
@@ -63,10 +59,15 @@ nav.mainMenu{
 {
 	position: relative;
 	z-index: 10;
-	
- .container
+ 
+ .containerTop
 	{
 		padding: 5.2em 1.8em;
+	}
+
+ .container
+	{
+		padding: 0em 1.8em;
 	}
 }
 
