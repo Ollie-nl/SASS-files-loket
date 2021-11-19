@@ -2497,13 +2497,8 @@ article .contact .navigation_button .register-button,
   nav li a:focus {
     background: #000000;
     color: #FFFFFF;
-    border-color: #000000;
-    border-style: dotted;
-    box-shadow-color: #FFFFFF;
-    box-shadow-spread-radius: 2px;
-    color: #000000;
-    outline-color: #000000;
-    outline-width: 2px;
+    outline: 2px dotted #000000;
+    outline-offset: -2px;
   }
   nav .english {
     position: absolute;

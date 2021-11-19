@@ -473,15 +473,9 @@ nav
 			{
 				background: $zwart;
 				color: $wit;
-				border-color:  $zwart;
-				border-style: dotted;
-				box-shadow-color:$wit ;
-				box-shadow-spread-radius:2px ;
-				color: $zwart;
-				outline-color: $zwart;
-				outline-width: 2px;
+				outline:2px dotted $zwart;
+				outline-offset:-2px;
 			}
-
 		}
 	}
 	
