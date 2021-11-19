@@ -1721,6 +1721,9 @@ nav.mainMenu ul {
 nav.mainMenu li {
   height: 3.35em;
 }
+nav.mainMenu li .last {
+  border-right: none;
+}
 
 #main {
   position: relative;
@@ -1983,9 +1986,20 @@ nav li a {
   text-decoration: none;
   transition: background-color 0.25s ease;
 }
-nav li a.selected, nav li a:hover, nav li a:focus {
+nav li a.selected, nav li a:hover {
   background: #000000;
   color: #FFFFFF;
+}
+nav li a:focus {
+  background: #000000;
+  color: #FFFFFF;
+  border-color: #000000;
+  border-style: dotted;
+  box-shadow-color: #FFFFFF;
+  box-shadow-spread-radius: 2px;
+  color: #000000;
+  outline-color: #000000;
+  outline-width: 2px;
 }
 nav .english {
   position: absolute;

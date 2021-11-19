@@ -52,6 +52,9 @@ nav.mainMenu{
 
 	li{
 		height: 3.35em;
+		.last{
+			border-right:none;
+		}
 	}
 }
 
@@ -461,12 +464,24 @@ nav
 			transition: background-color 0.25s ease;
 			
 			&.selected,
-			&:hover,
-			&:focus
+			&:hover
 			{
 				background: $zwart;
 				color: $wit;
 			}
+			&:focus
+			{
+				background: $zwart;
+				color: $wit;
+				border-color:  $zwart;
+				border-style: dotted;
+				box-shadow-color:$wit ;
+				box-shadow-spread-radius:2px ;
+				color: $zwart;
+				outline-color: $zwart;
+				outline-width: 2px;
+			}
+
 		}
 	}
 	
