@@ -2311,9 +2311,9 @@ article .contact .dataTables_filter label,
     background: #000000;
     color: #FFFFFF;
     outline: 2px dotted #000000;
-    outline-offset: -2px;
+    outline-offset: 0;
     z-index: 1024;
-    box-shadow: 0 0 0 -2px #FFFFFF;
+    box-shadow: 0 0 0 2px #FFFFFF;
   }
   nav .english {
     position: absolute;
