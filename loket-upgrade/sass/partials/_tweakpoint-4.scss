@@ -475,6 +475,8 @@ nav
 				color: $wit;
 				outline:2px dotted $zwart;
 				outline-offset:-2px;
+				z-index:1024;
+				box-shadow:0 0 0 -2px $wit;
 			}
 		}
 	}

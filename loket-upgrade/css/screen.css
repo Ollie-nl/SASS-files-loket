@@ -2336,6 +2336,8 @@ article .contact .twocolumngroup-col2 > div {
     color: #FFFFFF;
     outline: 2px dotted #000000;
     outline-offset: -2px;
+    z-index: 1024;
+    box-shadow: 0 0 0 -2px #FFFFFF;
   }
   nav .english {
     position: absolute;
