@@ -3,9 +3,13 @@
 //  Alles voor touchversie van menu en zoekveld
 //
 
-#readspeaker_button1,
-.skiplinks a span,
+
 .returnlink span
+{
+	display: none;
+}
+#readspeaker_button1,
+.skiplinks a span
 {
   @include assistive;	
 }

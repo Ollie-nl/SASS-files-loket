@@ -1766,9 +1766,12 @@ footer .social .instagram {
  *
  */
 @media screen and (max-width: 59.95em) {
+  .returnlink span {
+    display: none;
+  }
+
   #readspeaker_button1,
-.skiplinks a span,
-.returnlink span {
+.skiplinks a span {
     display: inline-block !important;
     width: 1px;
     height: 1px;
@@ -2424,10 +2427,20 @@ article .contact .navigation_button .register-button,
     margin-top: 1.5em;
   }
 
-  .skiplinks a img,
-.skiplinks a:not(:focus),
-.returnlink {
+  .returnlink {
     display: none;
+  }
+
+  .skiplinks a img,
+.skiplinks a:not(:focus) {
+    display: inline-block !important;
+    width: 1px;
+    height: 1px;
+    position: absolute !important;
+    overflow: hidden;
+    margin: -1px;
+    padding: 0;
+    border: 0;
   }
 
   .skiplinks a:focus {

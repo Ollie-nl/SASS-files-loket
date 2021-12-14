@@ -372,12 +372,15 @@ h1
 }
 
 //  HIDE MENU BUTTONS, SHOW SKIPLINKS ON FOCUS
-.skiplinks a img,
-.skiplinks a:not(:focus),
-.returnlink
-{
+
+.returnlink{
 	display: none;
-	//@include assistive;
+}
+
+.skiplinks a img,
+.skiplinks a:not(:focus)
+{	
+	@include assistive;
 }
 .skiplinks
 {
