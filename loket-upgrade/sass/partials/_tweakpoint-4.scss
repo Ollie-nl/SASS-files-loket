@@ -274,9 +274,6 @@ article
 }
 
 
-
-
-
 //  CONTACTBLOK HOMEPAGE
 //
 article .contact
@@ -311,8 +308,6 @@ article .contact
 }
 
 
-
-
 //  GROTE FOTO
 //
 .herald
@@ -330,9 +325,6 @@ article .contact
 		}
 	}
 }
-
-
-
 
 
 
@@ -363,7 +355,6 @@ article .contact
 }
 
 
-
 //  SIZE UP TYPOGRAPHY
 //
 h1
@@ -380,15 +371,13 @@ h1
 	}
 }
 
-
-
-
 //  HIDE MENU BUTTONS, SHOW SKIPLINKS ON FOCUS
 .skiplinks a img,
 .skiplinks a:not(:focus),
 .returnlink
 {
-	@include assistive;
+	display: none;
+	//@include assistive;
 }
 .skiplinks
 {
@@ -404,9 +393,6 @@ h1
 		text-decoration: none;
 	}
 }
-
-
-
 
 
 //  MAIN MENU WITH TOPICS

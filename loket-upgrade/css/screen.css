@@ -2264,14 +2264,7 @@ article .contact .twocolumngroup-col2 > div {
   .skiplinks a img,
 .skiplinks a:not(:focus),
 .returnlink {
-    display: inline-block !important;
-    width: 1px;
-    height: 1px;
-    position: absolute !important;
-    overflow: hidden;
-    margin: -1px;
-    padding: 0;
-    border: 0;
+    display: none;
   }
 
   .skiplinks a:focus {
